@@ -4,7 +4,7 @@
 
 ## My Market
 
-Este proyecto es una aplicación web de e-commerce simple llamada "My Market". Permite a los usuarios ver productos, categorías y precios, y agregar productos a un carrito de compras.
+Este proyecto es una aplicación web de e-commerce llamada "My Market". Permite a los usuarios ver productos, categorías y precios, y agregar productos a un carrito de compras.
 
 ![Prototipo](/images/screens/prototipo.png)
 
