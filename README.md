@@ -3,7 +3,7 @@
 ## Semana 1 - Diseño y Estilos
 
 
-<div align="center">
+<div align="left">
 <a href="https://skillicons.dev">
 <img src="https://skillicons.dev/icons?i=html,css" alt="Languages"/>
 </a>
