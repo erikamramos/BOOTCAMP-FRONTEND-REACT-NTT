@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Market</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header class="header">
-      <div class="logo">
-        <img src="/images/logo.png" alt="My Market" width="50px">
+    <header class="header header--main">
+      <div class="header__logo">
+        <img src="./assets/images/logo.png" alt="My Market" width="50px">
         <h1>My Market</h1>
       </div>
-      <div class="cart-icon">
-        <span class="cart-count">0</span>
-        <img src="/images/shopping-cart.png" alt="Carrito" width="40px">
+      <div class="header__cart">
+        <span class="header__cart-count">0</span>
+        <img src="./assets/images/shopping-cart.png" alt="Carrito" width="40px">
       </div>
     </header>
 
-    <div class="search-bar">
+    <div class="search-bar search-bar--main">
       <input type="text" placeholder="Buscar productos...">
       <select>
         <option>Todas las categorías</option>
@@ -27,77 +28,77 @@
       </select>
     </div>
 
-    <main class="product-container">
-      <div class="product-list">
-        <div class="product-card">
-          <img src="/images/productos/image-lechuga.png" alt="Lechuga">
+    <main class="product-container product-container--main">
+      <div class="product-list product-list--grid">
+        <div class="product-card product-card--item">
+          <img src="./assets/images/productos/image-lechuga.png" alt="Lechuga">
           <h3>Lechuga</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur omnis illo sunt</p>
           <div>
-            <span class="category">Vegetales</span>
+            <span class="product-card__category">Vegetales</span>
           </div>
-          <p class="price">Precio: S/ 2.99</p>
-          <button>Agregar al carrito</button>
+          <p class="product-card__price">Precio: S/ 2.99</p>
+          <button class="product-card__button">Agregar al carrito</button>
         </div>
-        <div class="product-card">
-          <img src="/images/productos/image-mango.png" alt="Mango">
+        <div class="product-card product-card--item">
+          <img src="./assets/images/productos/image-mango.png" alt="Mango">
           <h3>Mango</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur omnis illo sunt</p>
           <div>
-            <span class="category">Frutas</span>
+            <span class="product-card__category">Frutas</span>
           </div>
-          <p class="price">Precio: S/ 2.99</p>
-          <button>Agregar al carrito</button>
+          <p class="product-card__price">Precio: S/ 2.99</p>
+          <button class="product-card__button">Agregar al carrito</button>
         </div>
-        <div class="product-card">
-          <img src="/images/productos/image-manzana.png" alt="Manzana">
+        <div class="product-card product-card--item">
+          <img src="./assets/images/productos/image-manzana.png" alt="Manzana">
           <h3>Manzana Verde</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur omnis illo sunt</p>
           <div>
-            <span class="category">Frutas</span>
+            <span class="product-card__category">Frutas</span>
           </div>
-          <p class="price">Precio: S/ 2.99</p>
-          <button>Agregar al carrito</button>
+          <p class="product-card__price">Precio: S/ 2.99</p>
+          <button class="product-card__button">Agregar al carrito</button>
         </div>
-        <div class="product-card">
-          <img src="/images/productos/image-tomate.png" alt="Tomate">
+        <div class="product-card product-card--item">
+          <img src="./assets/images/productos/image-tomate.png" alt="Tomate">
           <h3>Tomate</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur omnis illo sunt</p>
           <div>
-            <span class="category">Vegetales</span>
+            <span class="product-card__category">Vegetales</span>
           </div>
-          <p class="price">Precio: S/ 2.99</p>
-          <button>Agregar al carrito</button>
+          <p class="product-card__price">Precio: S/ 2.99</p>
+          <button class="product-card__button">Agregar al carrito</button>
         </div>
-        <div class="product-card">
-          <img src="/images/productos/image-tomate.png" alt="Tomate">
+        <div class="product-card product-card--item">
+          <img src="./assets/images/productos/image-tomate.png" alt="Tomate">
           <h3>Tomate</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur omnis illo sunt</p>
           <div>
-            <span class="category">Vegetales</span>
+            <span class="product-card__category">Vegetales</span>
           </div>
-          <p class="price">Precio: S/ 2.99</p>
-          <button>Agregar al carrito</button>
+          <p class="product-card__price">Precio: S/ 2.99</p>
+          <button class="product-card__button">Agregar al carrito</button>
         </div>
-        <div class="product-card">
-          <img src="/images/productos/image-tomate.png" alt="Tomate">
+        <div class="product-card product-card--item">
+          <img src="./assets/images/productos/image-tomate.png" alt="Tomate">
           <h3>Tomate</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur omnis illo sunt</p>
           <div>
-            <span class="category">Vegetales</span>
+            <span class="product-card__category">Vegetales</span>
           </div>
-          <p class="price">Precio: S/ 2.99</p>
-          <button>Agregar al carrito</button>
+          <p class="product-card__price">Precio: S/ 2.99</p>
+          <button class="product-card__button">Agregar al carrito</button>
         </div>
       </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer footer--main">
       <p>Síguenos en nuestras redes sociales</p>
-      <div class="social-icons">
-        <img src="/images/redes/twitter.png" alt="Twitter">
-        <img src="/images/redes/instagram.png" alt="Instagram">
-        <img src="/images/redes/tiktok.png" alt="TikTok">
+      <div class="footer__icons">
+        <img src="./assets/images/redes/twitter.png" alt="Twitter">
+        <img src="./assets/images/redes/instagram.png" alt="Instagram">
+        <img src="./assets/images/redes/tiktok.png" alt="TikTok">
       </div>
       <p>&copy; 2024 My Market. Todos los derechos reservados.</p>
     </footer>
