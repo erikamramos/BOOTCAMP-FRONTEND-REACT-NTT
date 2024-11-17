@@ -2,11 +2,18 @@
 
 ## Semana 1 - Diseño y Estilos
 
+
+<div align="center">
+<a href="https://skillicons.dev">
+<img src="https://skillicons.dev/icons?i=html,css" alt="Languages"/>
+</a>
+</div>
+
 ## My Market
 
 Este proyecto es una aplicación web de e-commerce llamada "My Market". Permite a los usuarios ver productos, categorías y precios, y agregar productos a un carrito de compras.
 
-![Prototipo](/images/screens/prototipo.png)
+![Prototipo](/assets/images/screens/prototipo.png)
 
 ## Estructura del Proyecto
 
@@ -16,7 +23,7 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 - **styles.css**: Archivo de estilos que define el diseño visual de la aplicación, como el estilo de la lista de productos, el diseño responsivo y los componentes.
 - **images**: Carpeta que contiene las imagenes a utilizar en el proyecto
 
-![Estructura](/images/screens/estructura-carpetas.png)
+![Estructura](/assets/images/screens/estructura-carpetas.png)
 
 ## Implementación
 
