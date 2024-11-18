@@ -59,7 +59,7 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 
 ## Implementación
 
-- **Javascript**: La lista de productos  se ha diseñado como una cuadrícula que muestra un máximo de 3 columnas en pantallas grandes. En responsive, la cuadrícula se ajusta automáticamente para mostrar solo una columna.
+- **Javascript**: En el proyecto está organizado en módulos, lo que significa que cada archivo tiene una función específica
     ```
     <script type="module" src="./src/pages/main.js"></script>
     ```
