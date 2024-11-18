@@ -1,0 +1,302 @@
+:root {
+  --font-primary: "Poppins", sans-serif;
+
+  /* Colors */
+  --color-text: #333;
+  --color-footer-text: #fff;
+  --color-primary: #245558;
+  --color-secondary: #ffffff;
+  --color-accent: #1db954;
+  --color-border: #ddd;
+  --color-highlight: #fb7f7f;
+  --color-rating: #ffa500;
+  --color-card-shadow: rgba(0, 0, 0, 0.16);
+  --color-button-bg: #f3f5ed;
+  --color-category-bg: #ffd570;
+  --shadow-inset: #24555812 0px -50px 36px -28px inset;
+
+  /* Spacing */
+  --padding-small: 0.5rem;
+  --padding-normal: 0.7rem;
+  --padding-medium: 1rem;
+  --padding-large: 2rem;
+
+  /* Radius */
+  --radius-small: 4px;
+  --radius-medium: 5px;
+  --radius-large: 8px;
+  --radius-xlarge: 15px;
+  --radius-full: 50px;
+  --radius-card: 12px;
+
+  /* Transitions */
+  --transition-duration: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+}
+
+.header {
+  background-color: var(--color-secondary);
+  padding: var(--padding-medium);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.header__container {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-medium) var(--padding-large);
+  color: var(--color-secondary);
+  border-radius: var(--radius-xlarge);
+  gap: 1rem;
+}
+
+.header__logo img {
+  max-height: 40px;
+}
+
+.filters__search {
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-card);
+  padding: 0.5rem 1.5rem;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.filters__search input {
+  font-family: var(--font-primary);
+  border: none;
+  flex-grow: 1;
+  outline: none;
+  border-radius: var(--radius-card);
+  font-size: 1rem;
+}
+
+.filters__search-icon {
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.header__cart {
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header__cart-icon {
+  color: var(--color-primary);
+  font-size: 25px;
+}
+
+.header__cart-count {
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.5rem;
+  color: var(--color-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--color-highlight);
+}
+
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--padding-medium);
+}
+
+.filters {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: var(--padding-medium);
+}
+
+.filters__dropdown {
+  font-family: var(--font-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--padding-small);
+}
+
+.filters__spacer {
+  flex-grow: 1;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--padding-large);
+  padding: var(--padding-large) 0;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--padding-medium);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  box-shadow: var(--color-card-shadow) 0px 1px 4px;
+}
+
+.product-card__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+.product-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-card__name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.product-card__category {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: var(--radius-medium);
+  background-color: var(--color-category-bg);
+}
+
+.product-card__price {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.product-card__rating {
+  color: var(--color-rating);
+}
+
+.product-card__button {
+  background-color: var(--color-button-bg);
+  box-shadow: var(--shadow-inset);
+  border-radius: var(--radius-large);
+  border: none;
+  padding: var(--padding-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--transition-duration);
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: auto;
+  width: 100%;
+  font-family: var(--font-primary);
+  gap: 2px;
+}
+
+.product-card__button-icon {
+  font-size: 1rem;
+}
+
+.product-card__button:hover {
+  transform: scale(1.05);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+.product-card__button:hover .product-card__button-icon {
+  background-image: url('/src/assets/icons/shopping-cart-line-white.svg');
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background-color: var(--color-primary);
+  color: var(--color-footer-text);
+  text-align: center;
+  padding: var(--padding-large);
+  border-radius: var(--radius-xlarge) var(--radius-xlarge) 0 0;
+}
+
+.footer__icons img {
+  width: 24px;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters__spacer {
+    display: none;
+  }
+
+  .filters__dropdown{
+    width: 100%;
+  }
+
+  .filters__search{
+    width: 100%;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  color: currentColor;
+}
+
+.icon[data-icon="shopping-cart"] {
+  background-image: url('/src/assets/icons/shopping-cart-line.svg');
+}
+
+.icon[data-icon="search-line"] {
+  background-image: url('/src/assets/icons/search-line.svg');
+}
+
+.icon[data-icon="user-line"] {
+  background-image: url('/src/assets/icons/user-line.svg');
+}
