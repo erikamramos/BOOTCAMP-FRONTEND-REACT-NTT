@@ -1,8 +1,8 @@
 import { fetchProducts, fetchProductsByCategories } from '../services/fetchProducts.js';
 import { fetchCategories } from '../services/fetchCategories.js';
 import { renderProducts } from '../components/ProductList.js';
-import { searchProducts } from '../components/SearchBox.js';
-import { filterByCategory, renderCategories } from '../components/CategoryFilter.js';
+import { searchProducts } from '../components/SearchBar.js';
+import { renderCategories } from '../components/CategoryFilter.js';
 
 const productListElement = document.getElementById('product-list');
 const searchBoxElement = document.getElementById('search-box');
