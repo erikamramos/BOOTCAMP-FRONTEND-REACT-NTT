@@ -66,8 +66,9 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 │   │   ├── helper.ts
 │   │   └── ratingStars.ts
 │   ├── vite-env.d.ts
-│   └── styles
-│       └── styles.css
+│   ├── styles
+│   │   └── styles.css
+│   └── main.ts
 ├── index.html
 ├── package-lock.json
 └── package.json
@@ -79,7 +80,7 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 
 - **Typescript**: En el proyecto está organizado en módulos, lo que significa que cada archivo tiene una función específica
     ```
-    <script type="module" src="./src/pages/main.ts"></script>
+    <script type="module" src="./src/main.ts"></script>
     ```
 - **Componentes dinámicos**: Los componentes están definidos como módulos en la carpeta components y se conectan al DOM mediante Typescript, realizando la migracion de Javascript:
     - **``CategoryFilter.ts``**: Renderiza un dropdown con las categorías obtenidas desde la API y permitir filtrar los productos según la selección
