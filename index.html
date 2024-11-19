@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Market</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <img src="./src/assets/images/logo.png" alt="MyMarket Logo">
+        </div>
+        <div class="filters__spacer"></div>
+        <div class="header__cart">
+          <i class="icon header__cart-icon" data-icon="shopping-cart"></i>
+          <span id="cart-count" class="header__cart-count">0</span>
+        </div>
+        <div class="header__cart">
+          <i class="icon header__cart-icon" data-icon="user-line"></i>
+        </div>
+      </div>
+    </header>
+    
+    <section class="filters">
+      <select id="category-filter" class="filters__dropdown">
+        <option value="">All Categories</option>
+      </select>
+      <select id="product-sort" class="filters__dropdown">
+        <option value="latest">Sort by: Latest</option>
+        <option value="price-asc">Sort by: Price (Low to High)</option>
+        <option value="price-desc">Sort by: Price (High to Low)</option>
+      </select>
+      <div class="filters__spacer"></div>
+      <div class="filters__search">
+        <input type="text" id="search-box" placeholder="Search...">
+        <i class="icon filters__search-icon" data-icon="search-line"></i>
+      </div>
+    </section>
+    
+    <main class="product-container product-container--grid">
+      <div id="product-list" class="product-list product-list--grid"></div>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+
+    <footer class="footer footer--main">
+      <p>Síguenos en nuestras redes sociales</p>
+      <div class="footer__icons">
+        <img src="./src/assets/images/redes/twitter.svg" alt="Twitter">
+        <img src="./src/assets/images/redes/instagram.svg" alt="Instagram">
+        <img src="./src/assets/images/redes/tiktok.svg" alt="TikTok">
+      </div>
+      <p>&copy; 2024 My Market. Todos los derechos reservados.</p>
+    </footer>
+
+  </body>
+</html>
