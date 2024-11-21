@@ -50,4 +50,4 @@ const incrementCart = (() => {
     cartCount += 1;
     cartCounterElement.textContent = cartCount;
   };
-})();
+})(); // por qué un iief?
