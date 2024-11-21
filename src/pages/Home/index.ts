@@ -55,6 +55,7 @@ productSortElement.addEventListener('change', (e) => {
     case SortOptions.PRICE_DESC:
       sortedProducts = [...allProducts].sort((a, b) => b.price - a.price);
       break;
+    // default y latest son lo mismo ... si ese es el caso latest no tiene mucho sentido  
     case SortOptions.LATEST:
       sortedProducts = [...allProducts];
       break;

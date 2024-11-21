@@ -52,6 +52,7 @@ export const renderProducts = (
   });
 };
 
+// esto no es un componente
 const incrementCart = (() => {
   let cartCount = 0;
   const cartCounterElement = document.getElementById('cart-count') as HTMLElement;
