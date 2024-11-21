@@ -1,5 +1,6 @@
 import { Product } from '../models/Product';
 
+// por que unknow?
 export const mapProducts = (products: unknown): Product[] => {
   if (!Array.isArray(products)) {
     throw new Error('Invalid products data');
