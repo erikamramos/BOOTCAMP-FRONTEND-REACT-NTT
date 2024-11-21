@@ -2,6 +2,7 @@ import { fetchProducts, fetchProductsByCategories } from '../services/fetchProdu
 import { fetchCategories } from '../services/fetchCategories.js';
 import { renderProducts } from '../components/ProductList.js';
 import { searchProducts } from '../components/SearchBox.js';
+// eliminar las importaciones que no se usan
 import { filterByCategory, renderCategories } from '../components/CategoryFilter.js';
 
 const productListElement = document.getElementById('product-list');
