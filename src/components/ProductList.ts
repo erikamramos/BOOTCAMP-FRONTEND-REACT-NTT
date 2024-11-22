@@ -1,4 +1,5 @@
 import { Product } from '../models/Product';
+import { incrementCart } from '../services/cartServices';
 import { createRatingStars } from '../utils/ratingStars';
 
 export const renderProducts = (
@@ -51,13 +52,3 @@ export const renderProducts = (
     container.appendChild(card);
   });
 };
-
-const incrementCart = (() => {
-  let cartCount = 0;
-  const cartCounterElement = document.getElementById('cart-count') as HTMLElement;
-
-  return () => {
-    cartCount += 1;
-    cartCounterElement.textContent = cartCount.toString();
-  };
-})();

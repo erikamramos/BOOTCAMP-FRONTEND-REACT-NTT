@@ -1,14 +1,13 @@
-import { fetchProducts, fetchProductsByCategories } from '../../services/fetchProducts';
-import { fetchCategories } from '../../services/fetchCategories';
+import { fetchProducts, fetchProductsByCategories, searchProducts } from '../../services/productService';
+import { fetchCategories } from '../../services/categoriesServices';
 import { renderProducts } from '../../components/ProductList';
-import { searchProducts } from '../../components/SearchBar';
 import { renderCategories } from '../../components/CategoryFilter';
 import { Product } from '../../models/Product';
 import { Category } from '../../models/Category';
 import { SortOptions } from '../../enums/SortOptions';
 
 const productListElement = document.getElementById('product-list') as HTMLElement;
-const searchBoxElement = document.getElementById('search-box') as HTMLInputElement;
+const searchBarElement = document.getElementById('search-box') as HTMLInputElement;
 const categoryFilterElement = document.getElementById('category-filter') as HTMLSelectElement;
 const productSortElement = document.getElementById('product-sort') as HTMLSelectElement;
 
@@ -29,7 +28,7 @@ export async function initializeHomePage(): Promise<void> {
   
 
 // Buscar productos
-searchBoxElement.addEventListener('input', (e) => {
+searchBarElement.addEventListener('input', (e) => {
   const searchQuery = (e.target as HTMLInputElement).value;
   const filteredProducts = searchProducts(allProducts, searchQuery);
   renderProducts(filteredProducts, productListElement);
@@ -49,14 +48,11 @@ productSortElement.addEventListener('change', (e) => {
   let sortedProducts: Product[];
 
   switch (sortOption) {
-    case SortOptions.PRICE_ASC:
+    case SortOptions.PriceAsc:
       sortedProducts = [...allProducts].sort((a, b) => a.price - b.price);
       break;
-    case SortOptions.PRICE_DESC:
+    case SortOptions.PriceDesc:
       sortedProducts = [...allProducts].sort((a, b) => b.price - a.price);
-      break;
-    case SortOptions.LATEST:
-      sortedProducts = [...allProducts];
       break;
     default:
       sortedProducts = [...allProducts];

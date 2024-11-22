@@ -12,3 +12,10 @@ export const fetchProductsByCategories = async (category: string): Promise<Produ
   const data: ProductsResponse = await response.json();
   return mapProducts(data.products);
 };
+  
+export const searchProducts = (products: Product[], query: string): Product[] => {
+  return products.filter((product) =>
+    product.title.toLowerCase().includes(query.toLowerCase()) ||
+    product.description.toLowerCase().includes(query.toLowerCase())
+  );
+};

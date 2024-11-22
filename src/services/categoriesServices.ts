@@ -3,6 +3,9 @@ import { mapCategories } from '../mappers/categoryMapper';
 
 export const fetchCategories = async (): Promise<CategoriesResponse> => {
   const response = await fetch('https://dummyjson.com/products/categories');
-  const data: unknown = await response.json();
+  if (!response.ok) {
+    throw new Error('Invalid categories data');
+  }
+  const data: CategoriesResponse = await response.json();
   return mapCategories(data);
 };
