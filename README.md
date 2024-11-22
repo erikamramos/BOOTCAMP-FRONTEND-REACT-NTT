@@ -46,8 +46,7 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 │   │       └── logo.png
 │   ├── components
 │   │   ├── CategoryFilter.ts
-│   │   ├── ProductList.ts
-│   │   └── SearchBar.ts
+│   │   └── ProductList.ts
 │   ├── enums
 │   │   └── SortOptions.ts
 │   ├── mappers
@@ -60,8 +59,9 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 │   │   └── Home
 │   │       └── index.ts
 │   ├── services
-│   │   ├── fetchCategories.ts
-│   │   └── fetchProducts.ts
+│   │   ├── cartServices.ts
+│   │   ├── productServices.ts
+│   │   └── categoryServices.ts
 │   ├── utils
 │   │   ├── helper.ts
 │   │   └── ratingStars.ts
