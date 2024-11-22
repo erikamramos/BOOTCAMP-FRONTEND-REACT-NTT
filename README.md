@@ -85,10 +85,10 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 - **Componentes dinámicos**: Los componentes están definidos como módulos en la carpeta components y se conectan al DOM mediante Typescript, realizando la migracion de Javascript:
     - **``CategoryFilter.ts``**: Renderiza un dropdown con las categorías obtenidas desde la API y permitir filtrar los productos según la selección
     - **``ProductList.ts``**: Renderiza dinámicamente los productos obtenidos desde la API en formato de cards.
-    - **``SearchBar.ts``**: Implementar la funcionalidad de búsqueda en tiempo real al escribir un termino
 - **Servicios APIs**: Se utilizo la función fetch de Typescript. Estas funciones están encapsuladas en la carpeta services
-    - **``fetchProducts.js``**: Obtiene la lista de productos y productos por categoría
-    - **``fetchCategories.js``**: Obtiene las categorías
+    - **``productServices.ts``**: Obtiene la lista de productos, productos por categoría y realiza la busqueda de productos
+    - **``categoryServices.ts``**: Obtiene las categorías
+    - **``cartServices.ts``**: Agrega productos al carrito
 - **Models & Mappers**
     - **``Category.ts``**: Define la estructura de datos de una categoría.
     - **``Product.ts``**: Define la estructura de datos de un producto
