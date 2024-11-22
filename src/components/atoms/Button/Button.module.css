@@ -1,0 +1,54 @@
+.button {
+  padding: var(--padding-normal);
+  box-shadow: var(--shadow-inset);
+  border-radius: var(--radius-large);
+  padding: var(--padding-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  gap: 2px;
+  transition: transform var(--transition-duration);
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+.primary:hover  {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+.secondary {
+  background-color: var(--color-button-bg);
+  color: var(--color-primary);
+}
+.secondary:hover  {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.product-card__button-icon {
+  font-size: 1rem;
+}
+
+.auto{
+  width: auto;
+}
+.block{
+  width: 100%;
+}

@@ -1,0 +1,53 @@
+
+.header {
+  background-color: var(--color-secondary);
+  padding: var(--padding-medium);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.header__container {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-medium) var(--padding-large);
+  color: var(--color-secondary);
+  border-radius: var(--radius-xlarge);
+  gap: 1rem;
+}
+
+.header__logo img {
+  max-height: 40px;
+}
+
+.header__cart {
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header__cart-icon {
+  color: var(--color-primary);
+  font-size: 25px;
+}
+
+.filters__spacer {
+  flex-grow: 1;
+}
+.header__cart_count {
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.5rem;
+  color: var(--color-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--color-highlight);
+}

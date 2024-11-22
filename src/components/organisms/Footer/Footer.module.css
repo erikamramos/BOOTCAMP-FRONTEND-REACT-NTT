@@ -1,0 +1,16 @@
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background-color: var(--color-primary);
+  color: var(--color-footer-text);
+  text-align: center;
+  padding: var(--padding-large);
+  border-radius: var(--radius-xlarge) var(--radius-xlarge) 0 0;
+}
+
+.footer__icons img {
+  width: 24px;
+  margin: 0 0.5rem;
+}
