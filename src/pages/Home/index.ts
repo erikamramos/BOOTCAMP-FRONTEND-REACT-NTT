@@ -1,5 +1,5 @@
-import { fetchProducts, fetchProductsByCategories, searchProducts } from '../../services/productService';
-import { fetchCategories } from '../../services/categoriesServices';
+import { fetchProducts, fetchProductsByCategories, searchProducts } from '../../services/productServices';
+import { fetchCategories } from '../../services/categoryServices';
 import { renderProducts } from '../../components/ProductList';
 import { renderCategories } from '../../components/CategoryFilter';
 import { Product } from '../../models/Product';
