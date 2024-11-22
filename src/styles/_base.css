@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+}
+
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  color: currentColor;
+}
+
+.icon[data-icon="shopping-cart"] {
+  background-image: url('/src/assets/icons/shopping-cart-line.svg');
+}
+
+.icon[data-icon="search-line"] {
+  background-image: url('/src/assets/icons/search-line.svg');
+}
+
+.icon[data-icon="user-line"] {
+  background-image: url('/src/assets/icons/user-line.svg');
+}

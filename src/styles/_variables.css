@@ -1,0 +1,30 @@
+:root {
+  --font-primary: "Poppins", sans-serif;
+
+  --color-text: #333;
+  --color-footer-text: #fff;
+  --color-primary: #245558;
+  --color-secondary: #ffffff;
+  --color-accent: #1db954;
+  --color-border: #ddd;
+  --color-highlight: #fb7f7f;
+  --color-rating: #ffa500;
+  --color-card-shadow: rgba(0, 0, 0, 0.16);
+  --color-button-bg: #f3f5ed;
+  --color-category-bg: #ffd570;
+  --shadow-inset: #24555812 0px -50px 36px -28px inset;
+
+  --padding-small: 0.5rem;
+  --padding-normal: 0.7rem;
+  --padding-medium: 1rem;
+  --padding-large: 2rem;
+
+  --radius-small: 4px;
+  --radius-medium: 5px;
+  --radius-large: 8px;
+  --radius-xlarge: 15px;
+  --radius-full: 50px;
+  --radius-card: 12px;
+
+  --transition-duration: 0.3s;
+}
