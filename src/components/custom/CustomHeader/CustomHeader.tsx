@@ -12,19 +12,13 @@ const Header: FC = () => {
       </div>
       <div className={styles.filters__spacer}></div>
       <div className={styles.header__cart}>
-        <i
-          className={`icon ${styles['header__cart-icon']}`}
-          data-icon="shopping-cart"
-        ></i>
+        <i className={`icon ${styles['header__cart-icon']}`} data-icon="shopping-cart"></i>
         <span id="cart-count" className={styles.header__cart_count}>
           {state.totalItems}
         </span>
       </div>
       <div className={styles.header__cart}>
-        <i
-          className={`icon ${styles['header__cart-icon']}`}
-          data-icon="user-line"
-        ></i>
+        <i className={`icon ${styles['header__cart-icon']}`} data-icon="user-line"></i>
       </div>
     </NavBar>
   );

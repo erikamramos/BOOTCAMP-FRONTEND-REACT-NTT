@@ -17,11 +17,7 @@ const ProductCard: FC<ProductCardProps> = ({ data }) => {
 
   return (
     <Card>
-      <img
-        src={data.thumbnail}
-        alt={data.title}
-        className={styles.card__image}
-      />
+      <img src={data.thumbnail} alt={data.title} className={styles.card__image} />
       <span className={styles.card__category}>{data.category}</span>
       <h3 className={styles.card__name}>{data.title}</h3>
       <p className={styles.card__price}>${data.price}</p>

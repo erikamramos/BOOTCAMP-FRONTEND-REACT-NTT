@@ -9,9 +9,7 @@ const fetchInstance = async <T>(endpoint: string): Promise<FetchResponse<T>> => 
     const responseBody = (await response.json()) as T;
 
     if (!response.ok) {
-      throw new Error(
-        `Error ${response.status}: ${response.statusText}`
-      );
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
 
     return {

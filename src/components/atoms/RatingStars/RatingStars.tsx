@@ -23,10 +23,7 @@ export const RatingStars: FC<RatingStarsProps> = ({ rating }) => {
       )),
     ...(halfStar
       ? [
-          <span
-            key="half"
-            className={`${styles.rating__star} ${styles['rating__star--half']}`}
-          >
+          <span key="half" className={`${styles.rating__star} ${styles['rating__star--half']}`}>
             ☆
           </span>,
         ]

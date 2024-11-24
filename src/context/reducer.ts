@@ -40,7 +40,11 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
 export const productReducer = (state: ProductState, action: ProductAction): ProductState => {
   switch (action.type) {
     case 'LOAD_PRODUCTS':
-      return { ...state, products: action.payload, filteredProducts: action.payload };
+      return {
+        ...state,
+        products: action.payload,
+        filteredProducts: action.payload,
+      };
     case 'LOAD_CATEGORIES':
       return { ...state, categories: action.payload };
     case 'FILTER_PRODUCTS':

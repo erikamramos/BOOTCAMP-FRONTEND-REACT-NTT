@@ -13,7 +13,7 @@ const Filters: FC = () => {
     const filtered = state.products.filter(
       (product) =>
         product.title.toLowerCase().includes(searchQuery) ||
-        product.description.toLowerCase().includes(searchQuery)
+        product.description.toLowerCase().includes(searchQuery),
     );
     dispatch({ type: 'FILTER_PRODUCTS', payload: filtered });
   };
@@ -61,11 +61,7 @@ const Filters: FC = () => {
         onChange={filterByCategory}
       />
       <div className={styles.filters__spacer}></div>
-      <Input
-        id="search-box"
-        placeholder="Search..."
-        onChange={searchProducts}
-      />
+      <Input id="search-box" placeholder="Search..." icon="search" onChange={searchProducts} />
     </section>
   );
 };

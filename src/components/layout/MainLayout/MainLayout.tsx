@@ -1,4 +1,4 @@
-import { FC,ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import styles from './MainLayout.module.css';
 import CustomHeader from '../../custom/CustomHeader/CustomHeader';
 import CustomFooter from '../../custom/CustomFooter/CustomFooter';
@@ -10,9 +10,9 @@ type MainLayoutProps = {
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
     <>
-      <CustomHeader/>
+      <CustomHeader />
       <main className={styles.main}>{children}</main>
-      <CustomFooter/>
+      <CustomFooter />
     </>
   );
 };

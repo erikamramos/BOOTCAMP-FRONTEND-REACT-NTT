@@ -13,7 +13,7 @@ export default tseslint.config(
       'plugin:react/recommended',
       'plugin:@typescript-eslint/recommended',
       'plugin:react-hooks/recommended',
-      'prettier' // Prettier debe ir al final para desactivar reglas conflictivas
+      'prettier',
     ],
     files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
@@ -30,37 +30,43 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       '@typescript-eslint': tseslint,
-      prettier: {} // Plugin de Prettier
+      prettier: {},
     },
     rules: {
-      // Reglas de Prettier
-      'prettier/prettier': 'warn',
+      // Reglas de Airbnb Style Guide
+      indent: ['error', 2, { SwitchCase: 1 }],
+      quotes: ['error', 'single', { avoidEscape: true }],
+      semi: ['error', 'always'],
+      'comma-dangle': ['error', 'always-multiline'],
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'arrow-parens': ['error', 'always'],
+      'object-curly-spacing': ['error', 'always'],
+      'array-bracket-spacing': ['error', 'never'],
+      'max-len': ['error', { code: 100 }],
+      'no-use-before-define': ['error', { functions: false, classes: true }],
+      'prefer-const': 'error',
 
-      // Reglas para React
-      'react/jsx-uses-react': 'off', // No requerido en React 17+
-      'react/react-in-jsx-scope': 'off', // No requerido en React 17+
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-      'react/prop-types': 'off', // Usas TypeScript para tipos
+      'react/jsx-indent': ['error', 2],
+      'react/jsx-indent-props': ['error', 2],
+      'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
+      'react/jsx-curly-spacing': ['error', { when: 'always', children: true }],
+      'react/prop-types': 'off',
+      'react/react-in-jsx-scope': 'off',
 
-      // Reglas específicas de TypeScript
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
 
-      // React Refresh
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true }
-      ],
+      // Reglas de Prettier
+      'prettier/prettier': 'warn',
     },
     settings: {
       react: {
-        version: 'detect', // Detectar automáticamente la versión de React
+        version: 'detect',
       },
     },
-  }
+  },
 );

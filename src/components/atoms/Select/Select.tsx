@@ -9,13 +9,7 @@ type SelectProps = {
   value?: string;
 };
 
-export const Select: FC<SelectProps> = ({
-  id,
-  options,
-  placeholder,
-  onChange,
-  value,
-}) => {
+export const Select: FC<SelectProps> = ({ id, options, placeholder, onChange, value }) => {
   return (
     <select id={id} className={styles.select} onChange={onChange} value={value}>
       <option>{placeholder}</option>

@@ -7,12 +7,7 @@ interface IconProps {
   className?: string;
 }
 
-export const Icon: FC<IconProps> = ({
-  name,
-  color = 'currentColor',
-  size = 24,
-  className,
-}) => {
+export const Icon: FC<IconProps> = ({ name, color = 'currentColor', size = 24, className }) => {
   const iconSrc = `/src/assets/icons/${name}.svg`;
 
   return (

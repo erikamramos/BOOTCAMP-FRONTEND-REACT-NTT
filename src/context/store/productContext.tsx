@@ -12,9 +12,5 @@ export const ProductContext = createContext<ProductContextProps | undefined>(und
 export const ProductProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, productState);
 
-  return (
-    <ProductContext.Provider value={{ state, dispatch }}>
-      {children}
-    </ProductContext.Provider>
-  );
+  return <ProductContext.Provider value={{ state, dispatch }}>{children}</ProductContext.Provider>;
 };

@@ -1,4 +1,4 @@
-import { Product } from "../../models/Product";
+import { Product } from '../../models/Product';
 
 export const mapProducts = (products: Product[]): Product[] => {
   if (!Array.isArray(products)) {

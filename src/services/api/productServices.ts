@@ -11,7 +11,7 @@ export const fetchProducts = async (): Promise<Product[]> => {
 
 export const fetchProductsByCategories = async (category: string): Promise<Product[]> => {
   const response = await fetchInstance<ProductsResponse>(
-    `${Paths.ProductsCategory}/${category}?limit=10`
+    `${Paths.ProductsCategory}/${category}?limit=10`,
   );
   const data = response.data;
   return mapProducts(data.products);
