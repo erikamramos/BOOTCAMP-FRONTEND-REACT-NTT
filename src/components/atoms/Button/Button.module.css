@@ -11,7 +11,7 @@
   font-family: var(--font-primary);
   font-weight: 600;
   font-size: 0.8rem;
-  gap: 2px;
+  gap: 5px;
   transition: transform var(--transition-duration);
 }
 

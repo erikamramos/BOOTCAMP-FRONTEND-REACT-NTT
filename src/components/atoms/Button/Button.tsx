@@ -1,5 +1,6 @@
-import React from "react";
+import { FC } from "react";
 import styles from "./Button.module.css";
+import { Icon } from "../Icon/Icon";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -8,19 +9,22 @@ type ButtonProps = {
   block?: boolean;
   disabled?: boolean;
   icon?: string | null
+  className?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   children,
   onClick,
   variant = "primary",
   block = false,
   disabled = false,
   icon,
+  className
 }) => {
   return (
     <button
       className={`
+        ${className}
         ${styles.button} 
         ${ variant === "primary" ? styles.primary : styles.secondary }
         ${ block ? styles.block : styles.auto }
@@ -30,10 +34,8 @@ const Button: React.FC<ButtonProps> = ({
     >
       {children}
       {icon && (
-        <i className={`icon ${styles['product-card__button-icon']}`} data-icon={icon}></i>
+        <Icon name={icon} color={variant === "primary" ? '#FFFFFF' : '#245558' } size={16}/>
       )}
     </button>
   );
 };
-
-export default Button;

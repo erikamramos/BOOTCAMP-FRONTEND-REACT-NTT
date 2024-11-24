@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import { FC, useEffect } from "react";
 import styles from "./ProductList.module.css";
-import ProductCard from "../../molecules/ProductCard/ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 import { useProducts } from "../../../hooks/useProducts";
 import { fetchProducts } from "../../../services/api/productServices";
 
-const ProductList: React.FC = () => {
+const ProductList: FC = () => {
 
-  const { dispatch } = useProducts();
-  const { state } = useProducts();
+  const { dispatch, state } = useProducts();
 
   useEffect(() => {
     const loadData = async () => {

@@ -6,7 +6,7 @@ export type CartAction =
   | { type: 'REMOVE_FROM_CART'; payload: number };
 
 export type ProductAction =
-| { type: 'LOAD_PRODUCTS'; payload: Product[] }
-| { type: 'LOAD_CATEGORIES'; payload: Category[] }
-| { type: 'FILTER_PRODUCTS'; payload: Product[] }
-| { type: 'SORT_PRODUCTS'; payload: Product[] };
+  | { type: 'LOAD_PRODUCTS'; payload: Product[] }
+  | { type: 'LOAD_CATEGORIES'; payload: Category[] }
+  | { type: 'FILTER_PRODUCTS'; payload: Product[] }
+  | { type: 'SORT_PRODUCTS'; payload: Product[] };

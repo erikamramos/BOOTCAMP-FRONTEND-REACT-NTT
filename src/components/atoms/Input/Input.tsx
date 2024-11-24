@@ -1,35 +1,18 @@
-import React from "react";
-import styles from "./Input.module.css";
+import { FC, InputHTMLAttributes } from 'react';
+import styles from './Input.module.css';
 
-type InputProps = {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
-  type?: string;
-  placeholder?: string;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+}
 
-const Input: React.FC<InputProps> = ({
-  id,
-  type = "text",
-  placeholder,
-  value,
-  onChange,
-}) => {
+export const Input: FC<InputProps> = ({ id, ...props }) => {
   return (
     <div className={styles.input}>
-      <input
-        id={id} 
-        className={styles.input__field}
-        placeholder={placeholder}
-        onChange={onChange}
-        type={type} 
-        value={value}
-        />
-      <i className={`icon ${styles['input__icon']}`} data-icon="search-line"></i>
+      <input id={id} className={styles.input__field} {...props} />
+      <i
+        className={`icon ${styles['input__icon']}`}
+        data-icon="search-line"
+      ></i>
     </div>
-
   );
 };
-
-export default Input;

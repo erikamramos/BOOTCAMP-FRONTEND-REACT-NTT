@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, ReactNode, Dispatch } from 'react';
+import { FC, createContext, useReducer, ReactNode, Dispatch } from 'react';
 import { ProductState, productState, productReducer } from '../reducer';
 import { ProductAction } from '../actions';
 
@@ -9,7 +9,7 @@ interface ProductContextProps {
 
 export const ProductContext = createContext<ProductContextProps | undefined>(undefined);
 
-export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ProductProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, productState);
 
   return (

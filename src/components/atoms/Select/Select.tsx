@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Select.module.css";
+import { FC } from 'react';
+import styles from './Select.module.css';
 
 type SelectProps = {
   id?: string;
@@ -9,12 +9,16 @@ type SelectProps = {
   value?: string;
 };
 
-const Select: React.FC<SelectProps> = ({ id, options, placeholder, onChange, value }) => {
+export const Select: FC<SelectProps> = ({
+  id,
+  options,
+  placeholder,
+  onChange,
+  value,
+}) => {
   return (
     <select id={id} className={styles.select} onChange={onChange} value={value}>
-      <option>
-        {placeholder}
-      </option>
+      <option>{placeholder}</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
@@ -23,5 +27,3 @@ const Select: React.FC<SelectProps> = ({ id, options, placeholder, onChange, val
     </select>
   );
 };
-
-export default Select;
