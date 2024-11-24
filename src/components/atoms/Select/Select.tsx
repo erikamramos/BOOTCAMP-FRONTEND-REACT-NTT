@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import styles from './Select.module.css';
 
 type SelectProps = {
   id?: string;
   placeholder?: string;
   options: { value: string; label: string }[];
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
   value?: string;
 };
 

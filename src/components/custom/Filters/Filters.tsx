@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { ChangeEvent, FC, useEffect } from 'react';
 import styles from './Filters.module.css';
 import { Select, Input } from '../../atoms';
 import { fetchCategories } from '../../../services/api/categoryServices';
@@ -8,7 +8,7 @@ import { fetchProductsByCategories } from '../../../services/api/productServices
 const Filters: FC = () => {
   const { dispatch, state } = useProducts();
 
-  const searchProducts = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const searchProducts = (e: ChangeEvent<HTMLInputElement>) => {
     const searchQuery = e.target.value.toLowerCase();
     const filtered = state.products.filter(
       (product) =>
@@ -18,7 +18,7 @@ const Filters: FC = () => {
     dispatch({ type: 'FILTER_PRODUCTS', payload: filtered });
   };
 
-  const filterByCategory = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const filterByCategory = async (e: ChangeEvent<HTMLSelectElement>) => {
     const category = e.target.value;
     if (!category || category === 'all') {
       dispatch({ type: 'FILTER_PRODUCTS', payload: state.products });

@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 import styles from './CustomFooter.module.css';
 import { Footer } from '../../organisms';
 
-const CustomFooter: React.FC = () => {
+const CustomFooter: FC = () => {
   return (
     <Footer>
       <p>Síguenos en nuestras redes sociales</p>
