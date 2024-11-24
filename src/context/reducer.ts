@@ -1,6 +1,6 @@
 import { Category } from '../models/Category';
 import { Product } from '../models/Product';
-import { CartAction, ProductAction } from './actions';
+import { CartAction, ProductAction } from './types';
 
 export interface CartState {
   cart: Product[];

@@ -1,46 +1,28 @@
 import { ChangeEvent, FC, useEffect } from 'react';
 import styles from './Filters.module.css';
 import { Select, Input } from '../../atoms';
-import { fetchCategories } from '../../../services/api/categoryServices';
 import { useProducts } from '../../../hooks/useProducts';
-import { fetchProductsByCategories } from '../../../services/api/productServices';
+import {
+  filterProductsByCategory,
+  loadCategories,
+  searchProducts,
+} from '../../../context/actions/productActions';
 
 const Filters: FC = () => {
-  const { dispatch, state } = useProducts();
+  const { state, dispatch } = useProducts();
 
-  const searchProducts = (e: ChangeEvent<HTMLInputElement>) => {
-    const searchQuery = e.target.value.toLowerCase();
-    const filtered = state.products.filter(
-      (product) =>
-        product.title.toLowerCase().includes(searchQuery) ||
-        product.description.toLowerCase().includes(searchQuery),
-    );
-    dispatch({ type: 'FILTER_PRODUCTS', payload: filtered });
+  useEffect(() => {
+    loadCategories(dispatch);
+  }, [dispatch]);
+
+  const handleCategoryChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    filterProductsByCategory(dispatch, e.target.value, state.products);
   };
 
-  const filterByCategory = async (e: ChangeEvent<HTMLSelectElement>) => {
-    const category = e.target.value;
-    if (!category || category === 'all') {
-      dispatch({ type: 'FILTER_PRODUCTS', payload: state.products });
-      return;
-    }
-
-    try {
-      const filtered = await fetchProductsByCategories(category.toLowerCase());
-      dispatch({ type: 'FILTER_PRODUCTS', payload: filtered });
-    } catch (error) {
-      console.error(error);
-    }
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    searchProducts(dispatch, e.target.value, state.products);
   };
 
-  const loadCategories = async () => {
-    try {
-      const categories = await fetchCategories();
-      dispatch({ type: 'LOAD_CATEGORIES', payload: categories });
-    } catch (error) {
-      console.error(error);
-    }
-  };
   const mapCategoryOptions = () => {
     return state.categories.map((category) => ({
       value: category.slug,
@@ -49,7 +31,7 @@ const Filters: FC = () => {
   };
 
   useEffect(() => {
-    loadCategories();
+    loadCategories(dispatch);
   }, [dispatch]);
 
   return (
@@ -58,10 +40,10 @@ const Filters: FC = () => {
         id="category-filter"
         options={mapCategoryOptions()}
         placeholder="All Categories"
-        onChange={filterByCategory}
+        onChange={handleCategoryChange}
       />
       <div className={styles.filters__spacer}></div>
-      <Input id="search-box" placeholder="Search..." icon="search" onChange={searchProducts} />
+      <Input id="search-box" placeholder="Search..." icon="search" onChange={handleSearchChange} />
     </section>
   );
 };

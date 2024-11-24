@@ -2,18 +2,13 @@ import { FC, useEffect } from 'react';
 import styles from './ProductList.module.css';
 import ProductCard from '../ProductCard/ProductCard';
 import { useProducts } from '../../../hooks/useProducts';
-import { fetchProducts } from '../../../services/api/productServices';
+import { loadProducts } from '../../../context/actions/productActions';
 
 const ProductList: FC = () => {
-  const { dispatch, state } = useProducts();
+  const { state, dispatch } = useProducts();
 
   useEffect(() => {
-    const loadData = async () => {
-      const products = await fetchProducts();
-      dispatch({ type: 'LOAD_PRODUCTS', payload: products });
-    };
-
-    loadData();
+    loadProducts(dispatch);
   }, [dispatch]);
 
   return (

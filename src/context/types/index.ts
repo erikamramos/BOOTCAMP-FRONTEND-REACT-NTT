@@ -1,5 +1,5 @@
-import { Category } from '../models/Category';
-import { Product } from '../models/Product';
+import { Category } from '../../models/Category';
+import { Product } from '../../models/Product';
 
 export type CartAction =
   | { type: 'ADD_TO_CART'; payload: Product }

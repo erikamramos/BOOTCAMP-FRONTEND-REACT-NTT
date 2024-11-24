@@ -1,10 +1,6 @@
 import { Product } from '../../models/Product';
 
 export const mapProducts = (products: Product[]): Product[] => {
-  if (!Array.isArray(products)) {
-    throw new Error('Invalid products data');
-  }
-
   return products.map((product) => ({
     id: product.id,
     title: product.title,
