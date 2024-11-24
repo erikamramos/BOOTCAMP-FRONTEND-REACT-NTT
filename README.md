@@ -1,6 +1,6 @@
 # Bootcamp React NTT
 
-## Semana 2 - Typescript
+## Semana 3 - React Fundamentos
 
 <div align="left">
 <a href="https://skillicons.dev">
