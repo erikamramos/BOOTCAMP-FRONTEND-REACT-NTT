@@ -12,7 +12,8 @@
 
 Este proyecto es una aplicación web retail llamada "My Market". Permite a los usuarios ver productos, categorías y precios, y agregar productos a un carrito de compras.
 
-![Prototipo](/src/assets/images/screens/prototipo.png)
+![Prototipo](/src/assets/images/screens/prototipo-1.png)
+![Prototipo](/src/assets/images/screens/prototipo-2.png)
 
 ## Estructura del Proyecto
 
@@ -28,9 +29,9 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 
   - Contiene componentes reutilizables para la interfaz de usuario (UI), organizadas por Atomic Design
     - **`atoms`**: Componentes básicos como botones o inputs.
-    - **`molecules`**: Componentes que combinan múltiples átomos, como tarjetas.
-    - **`organisms`**: Estructuras más complejas, como barras de navegación.
-    - **`layout`**: Componentes para definir la disposición general de la aplicación.
+    - **`molecules`**: Componentes que combinan múltiples átomos, como cards.
+    - **`organisms`**: Estructuras más complejas, como navbars.
+    - **`layout`**: Componentes para definir la disposición de una página.
     - **`custom`**: Componentes personalizados.
 
 - **`pages`**:
@@ -39,9 +40,9 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 
 - **`services`**:
 
-  - Define la lógica de negocio y gestiona las llamadas a APIs.
+  - Gestiona las llamadas a APIs.
     - **`api/config`**: Configuración para instancias de `fetch` o rutas base.
-    - **`mappers`**: Mapeadores para transformar datos recibidos de APIs.
+    - **`mappers`**: Funciones para transformar datos recibidos de APIs.
 
 - **`styles`**:
 
@@ -51,7 +52,7 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 
 - **`config`**:
 
-  - Configuración del entorno, como variables del env.
+  - Configuración del entorno con las variables del env.
 
 - **`context`**:
 
@@ -67,6 +68,13 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 - **`models`**:
 
   - Define modelos de datos, como `Category`, para tipar correctamente objetos en TypeScript.
+
+- **`utils`**:
+
+  - Contiene funciones y datos auxiliares que se utilizan en diferentes partes del proyecto.
+    - **`data`**: Contiene datos estructurados sobre distritos.
+    - **`formatPrice.ts`**: Define una función para formatear precios según una moneda.
+    - **`validations`**: Contiene funciones de validación reutilizables para verificar datos ingresados.
 
 - **`main.tsx`** y **`App.tsx`**:
 
