@@ -1,6 +1,6 @@
 # Bootcamp React NTT
 
-## Semana 3 - React Fundamentos
+## Semana 3 - React Implementación
 
 <div align="left">
 <a href="https://skillicons.dev">
@@ -18,13 +18,65 @@ Este proyecto es una aplicación web retail llamada "My Market". Permite a los u
 
 La arquitectura de carpetas en este branch está organizada de la siguiente manera:
 
-- **src**: Archivo principal que contiene la estructura HTML de la tienda.
-  - **assets**: Almacena las images o recursos que se utilizan.
-  - **components**: Contiene componentes reutilizables de la interfaz de usuario (UI) que encapsulan funcionalidades específicas
-  - **pages**: Inicializa la página principal. Realiza la llamada a los servicios, se conectan los componentes, y se renderiza la vista principal
-  - **services**: Contiene los módulos sobre la lógica de negocio y las llamadas a APIs externas.
-  - **styles**: Contiene los estilos del diseño visual de la aplicación
-- **`index.html`**: Archivo principal que contiene la estructura HTML de la tienda.
+- **`assets`**:
+
+  - Almacena recursos como imágenes, íconos, fuentes, etc.
+    - **`icons`**: Íconos en SVG.
+    - **`images`**: Imágenes de logotipos o gráficos.
+
+- **`components`**:
+
+  - Contiene componentes reutilizables para la interfaz de usuario (UI), organizadas por Atomic Design
+    - **`atoms`**: Componentes básicos como botones o inputs.
+    - **`molecules`**: Componentes que combinan múltiples átomos, como tarjetas.
+    - **`organisms`**: Estructuras más complejas, como barras de navegación.
+    - **`layout`**: Componentes para definir la disposición general de la aplicación.
+    - **`custom`**: Componentes personalizados.
+
+- **`pages`**:
+
+  - Contiene las vistas principales de la aplicación.
+
+- **`services`**:
+
+  - Define la lógica de negocio y gestiona las llamadas a APIs.
+    - **`api/config`**: Configuración para instancias de `fetch` o rutas base.
+    - **`mappers`**: Mapeadores para transformar datos recibidos de APIs.
+
+- **`styles`**:
+
+  - Centraliza los estilos CSS de la aplicación.
+    - **`_variables.css`**: Define variables globales como colores y tipografías.
+    - **`main.css`**: Archivo principal que importa otros estilos.
+
+- **`config`**:
+
+  - Configuración del entorno, como variables del env.
+
+- **`context`**:
+
+  - Implementa el estado global de la aplicación mediante patrones como React Context API.
+    - **`types`**: Define tipos para el estado.
+    - **`store`**: Contiene acciones y contextos como `cartContext`.
+    - **`reducer`**: Define la lógica de reducción para manejar el estado global.
+
+- **`hooks`**:
+
+  - Contiene hooks personalizados como `useCart` para reutilizar lógica funcional.
+
+- **`models`**:
+
+  - Define modelos de datos, como `Category`, para tipar correctamente objetos en TypeScript.
+
+- **`main.tsx`** y **`App.tsx`**:
+
+  - **`main.tsx`**: Punto de entrada de la aplicación que inicializa React.
+  - **`App.tsx`**: Componente principal que define las rutas y estructura básica.
+
+- **`AppRouter.tsx`**:
+
+  - Define las rutas de la aplicación.
+
 - **`package.json` y `package-lock.json`**: Gestionan las dependencias del proyecto y la configuración de scripts de desarrollo.
 
 ```
@@ -71,11 +123,17 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 │   ├── config
 │   │   └── envs.ts
 │   ├── context
-│   │   ├── actions.ts
-│   │   ├── reducer.ts
+│   │   ├── types
+│   │   │   └── index.ts
+│   │   ├── store
+│   │   │   ├── cartActions.ts
+│   │   │   └── ...
+│   │   ├── reducer
+│   │   │   ├── cartReducer.ts
+│   │   │   └── ...
 │   │   └── store
 │   │       ├── cartContext.tsx
-│   │       └── productContext.tsx
+│   │       └── ...
 │   ├── hooks
 │   │   ├── useCart.ts
 │   │   └── ...
@@ -93,11 +151,21 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 │   │   └── mappers
 │   │       ├── categoryMapper.ts
 │   │       └── ...
+│   ├── utils
+│   │   ├── data
+│   │   │   └── districts.json
+│   │   ├── formatPrice.ts
+│   │   └── validations.ts
 │   ├── styles
 │   │   ├── _animation.css
 │   │   ├── _base.css
 │   │   ├── _variables.css
 │   │   └── main.css
+│   ├── main.tsx
+│   ├── App.tsx
+│   └── AppRouter.tsx
+├── .env
+├── .env.example
 ├── index.html
 ├── .prettierrc
 ├── eslint.config.js
@@ -111,17 +179,19 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 
 ## Configuración del proyecto
 
+#### Instalación de dependencias
+
 ```
 npm install
 ```
 
-#### Compila y recarga automáticamente en desarrollo.
+#### Compila en desarrollo.
 
 ```
 npm run dev
 ```
 
-#### Ábrelo con tu navegador para ver el resultado.
+#### Abrir en el navegador
 
 ```
 Local:   http://localhost:5173/
