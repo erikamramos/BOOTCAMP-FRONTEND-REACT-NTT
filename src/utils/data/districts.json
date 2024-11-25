@@ -1,207 +1,207 @@
 [
   {
     "id": 1,
-    "code_postal": "15001",
+    "codePostal": "15001",
     "name": "Lima"
   },
   {
     "id": 2,
-    "code_postal": "15002",
+    "codePostal": "15002",
     "name": "Ate"
   },
   {
     "id": 3,
-    "code_postal": "15003",
+    "codePostal": "15003",
     "name": "Barranco"
   },
   {
     "id": 4,
-    "code_postal": "15004",
+    "codePostal": "15004",
     "name": "Breña"
   },
   {
     "id": 5,
-    "code_postal": "15005",
+    "codePostal": "15005",
     "name": "Carabayllo"
   },
   {
     "id": 6,
-    "code_postal": "15006",
+    "codePostal": "15006",
     "name": "Chaclacayo"
   },
   {
     "id": 7,
-    "code_postal": "15007",
+    "codePostal": "15007",
     "name": "Chorrillos"
   },
   {
     "id": 8,
-    "code_postal": "15008",
+    "codePostal": "15008",
     "name": "Cieneguilla"
   },
   {
     "id": 9,
-    "code_postal": "15009",
+    "codePostal": "15009",
     "name": "Comas"
   },
   {
     "id": 10,
-    "code_postal": "15010",
+    "codePostal": "15010",
     "name": "El Agustino"
   },
   {
     "id": 11,
-    "code_postal": "15011",
+    "codePostal": "15011",
     "name": "Independencia"
   },
   {
     "id": 12,
-    "code_postal": "15012",
+    "codePostal": "15012",
     "name": "Jesús María"
   },
   {
     "id": 13,
-    "code_postal": "15013",
+    "codePostal": "15013",
     "name": "La Molina"
   },
   {
     "id": 14,
-    "code_postal": "15014",
+    "codePostal": "15014",
     "name": "La Victoria"
   },
   {
     "id": 15,
-    "code_postal": "15015",
+    "codePostal": "15015",
     "name": "Lince"
   },
   {
     "id": 16,
-    "code_postal": "15016",
+    "codePostal": "15016",
     "name": "Los Olivos"
   },
   {
     "id": 17,
-    "code_postal": "15017",
+    "codePostal": "15017",
     "name": "Lurigancho-Chosica"
   },
   {
     "id": 18,
-    "code_postal": "15018",
+    "codePostal": "15018",
     "name": "Lurín"
   },
   {
     "id": 19,
-    "code_postal": "15019",
+    "codePostal": "15019",
     "name": "Magdalena del Mar"
   },
   {
     "id": 20,
-    "code_postal": "15020",
+    "codePostal": "15020",
     "name": "Miraflores"
   },
   {
     "id": 21,
-    "code_postal": "15021",
+    "codePostal": "15021",
     "name": "Pachacámac"
   },
   {
     "id": 22,
-    "code_postal": "15022",
+    "codePostal": "15022",
     "name": "Pucusana"
   },
   {
     "id": 23,
-    "code_postal": "15023",
+    "codePostal": "15023",
     "name": "Puente Piedra"
   },
   {
     "id": 24,
-    "code_postal": "15024",
+    "codePostal": "15024",
     "name": "Punta Hermosa"
   },
   {
     "id": 25,
-    "code_postal": "15025",
+    "codePostal": "15025",
     "name": "Punta Negra"
   },
   {
     "id": 26,
-    "code_postal": "15026",
+    "codePostal": "15026",
     "name": "Rímac"
   },
   {
     "id": 27,
-    "code_postal": "15027",
+    "codePostal": "15027",
     "name": "San Bartolo"
   },
   {
     "id": 28,
-    "code_postal": "15028",
+    "codePostal": "15028",
     "name": "San Borja"
   },
   {
     "id": 29,
-    "code_postal": "15029",
+    "codePostal": "15029",
     "name": "San Isidro"
   },
   {
     "id": 30,
-    "code_postal": "15030",
+    "codePostal": "15030",
     "name": "San Juan de Lurigancho"
   },
   {
     "id": 31,
-    "code_postal": "15031",
+    "codePostal": "15031",
     "name": "San Juan de Miraflores"
   },
   {
     "id": 32,
-    "code_postal": "15032",
+    "codePostal": "15032",
     "name": "San Luis"
   },
   {
     "id": 33,
-    "code_postal": "15033",
+    "codePostal": "15033",
     "name": "San Martín de Porres"
   },
   {
     "id": 34,
-    "code_postal": "15034",
+    "codePostal": "15034",
     "name": "San Miguel"
   },
   {
     "id": 35,
-    "code_postal": "15035",
+    "codePostal": "15035",
     "name": "Santa Anita"
   },
   {
     "id": 36,
-    "code_postal": "15036",
+    "codePostal": "15036",
     "name": "Santa María del Mar"
   },
   {
     "id": 37,
-    "code_postal": "15037",
+    "codePostal": "15037",
     "name": "Santa Rosa"
   },
   {
     "id": 38,
-    "code_postal": "15038",
+    "codePostal": "15038",
     "name": "Santiago de Surco"
   },
   {
     "id": 39,
-    "code_postal": "15039",
+    "codePostal": "15039",
     "name": "Surquillo"
   },
   {
     "id": 40,
-    "code_postal": "15040",
+    "codePostal": "15040",
     "name": "Villa El Salvador"
   },
   {
     "id": 41,
-    "code_postal": "15041",
+    "codePostal": "15041",
     "name": "Villa María del Triunfo"
   }
 ]

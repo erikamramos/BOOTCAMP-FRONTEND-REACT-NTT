@@ -1,8 +1,8 @@
-.formfield {
-  margin-bottom: 1rem;
+.form-field {
+  margin-bottom: var(--margin-medium);
 }
 
-.label {
+.form-field__label {
   display: block;
   margin-bottom: 0.2rem;
   margin-left: 0.2rem;
@@ -10,8 +10,8 @@
   font-size: 0.8rem;
 }
 
-.error {
-  color: red;
+.form-field__error {
+  color: var(--color-error);
   font-size: 0.8rem;
   margin-top: 0.2rem;
   margin-left: 0.2rem;

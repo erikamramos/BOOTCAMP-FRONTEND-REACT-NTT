@@ -10,12 +10,12 @@ type FormFieldProps = {
 
 export const FormField: FC<FormFieldProps> = ({ id, label, error, children }) => {
   return (
-    <div id={id} className={styles.formfield}>
-      <label htmlFor={id} className={styles.label}>
+    <div id={id} className={styles['form-field']}>
+      <label htmlFor={id} className={styles['form-field__label']}>
         {label}
       </label>
       <>{children}</>
-      {error && <span className={styles.error}>{error}</span>}
+      {error && <span className={styles['form-field__error']}>{error}</span>}
     </div>
   );
 };

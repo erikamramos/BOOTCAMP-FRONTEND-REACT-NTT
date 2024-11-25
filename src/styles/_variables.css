@@ -1,13 +1,14 @@
 :root {
   --font-primary: 'Poppins', sans-serif;
 
-  --color-text: #333;
-  --color-footer-text: #fff;
   --color-primary: #245558;
   --color-secondary: #ffffff;
   --color-accent: #ffd570;
-  --color-border: #ddd;
+  --color-black: #333333;
+  --color-white: #ffffff;
+  --color-border: #dddddd;
   --color-highlight: #fb7f7f;
+  --color-error: #ea3b3b;
   --color-rating: #ffa500;
   --color-card-shadow: rgba(0, 0, 0, 0.16);
   --color-button-bg: #f3f5ed;
@@ -19,6 +20,13 @@
   --padding-medium: 1rem;
   --padding-large: 2rem;
   --padding-xlarge: 4rem;
+
+  --margin-none: 0rem;
+  --margin-small: 0.5rem;
+  --margin-normal: 0.7rem;
+  --margin-medium: 1rem;
+  --margin-large: 2rem;
+  --margin-xlarge: 4rem;
 
   --radius-small: 4px;
   --radius-medium: 5px;

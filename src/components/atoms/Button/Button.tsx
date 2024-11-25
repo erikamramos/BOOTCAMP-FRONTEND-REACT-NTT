@@ -26,8 +26,8 @@ export const Button: FC<ButtonProps> = ({
       className={`
         ${className}
         ${styles.button} 
-        ${variant === 'primary' ? styles.primary : styles.secondary}
-        ${block ? styles.block : styles.auto}
+        ${variant === 'primary' ? styles['button--primary'] : styles['button--secondary']}
+        ${block ? styles['button--block'] : styles['button--auto']}
         `}
       disabled={disabled}
       onClick={onClick}
