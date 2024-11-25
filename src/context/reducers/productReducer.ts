@@ -1,16 +1,6 @@
-import { Category } from '../models/Category';
-import { Product } from '../models/Product';
-import { CartAction, ProductAction } from './types';
-
-export interface CartState {
-  cart: Product[];
-  totalItems: number;
-}
-
-export const initialState: CartState = {
-  cart: [],
-  totalItems: 0,
-};
+import { Category } from '../../models/Category';
+import { Product } from '../../models/Product';
+import { ProductAction } from '../types';
 
 export interface ProductState {
   products: Product[];
@@ -18,24 +8,11 @@ export interface ProductState {
   categories: Category[];
 }
 
-export const productState: ProductState = {
+export const initialProductState: ProductState = {
   products: [],
   filteredProducts: [],
   categories: [],
 };
-
-export function cartReducer(state: CartState, action: CartAction): CartState {
-  switch (action.type) {
-    case 'ADD_TO_CART':
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-        totalItems: state.totalItems + 1,
-      };
-    default:
-      return state;
-  }
-}
 
 export const productReducer = (state: ProductState, action: ProductAction): ProductState => {
   switch (action.type) {

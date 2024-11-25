@@ -12,15 +12,13 @@ const ProductList: FC = () => {
   }, [dispatch]);
 
   return (
-    <main className={styles.product__container}>
-      <div className={styles.product__list}>
-        {state.filteredProducts.map((item, index) => (
-          <div key={index}>
-            <ProductCard data={item}></ProductCard>
-          </div>
-        ))}
-      </div>
-    </main>
+    <div className={styles.product__list}>
+      {state.filteredProducts.map((item, index) => (
+        <div key={index}>
+          <ProductCard data={item}></ProductCard>
+        </div>
+      ))}
+    </div>
   );
 };
 

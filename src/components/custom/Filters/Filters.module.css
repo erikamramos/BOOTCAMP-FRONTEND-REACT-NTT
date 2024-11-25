@@ -4,13 +4,12 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: var(--padding-medium);
+  padding: var(--padding-medium) var(--padding-none);
 }
 
 .filters__spacer {
   flex-grow: 1;
 }
-
 
 @media (max-width: 768px) {
   .filters {

@@ -11,7 +11,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
     <>
       <CustomHeader />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.container}>{children}</main>
       <CustomFooter />
     </>
   );

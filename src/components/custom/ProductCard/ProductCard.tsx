@@ -4,6 +4,7 @@ import { Product } from '../../../models/Product';
 import { RatingStars, Button } from '../../atoms';
 import { useCart } from '../../../hooks/useCart';
 import { Card } from '../../molecules';
+import { mapCart } from '../../../services/mappers/cartMapper';
 
 type ProductCardProps = {
   data: Product;
@@ -12,9 +13,8 @@ const ProductCard: FC<ProductCardProps> = ({ data }) => {
   const { dispatch } = useCart();
 
   const handleAddToCart = (product: Product) => {
-    dispatch({ type: 'ADD_TO_CART', payload: product });
+    dispatch({ type: 'ADD_TO_CART', payload: mapCart(product) });
   };
-
   return (
     <Card>
       <img src={data.thumbnail} alt={data.title} className={styles.card__image} />
@@ -29,7 +29,7 @@ const ProductCard: FC<ProductCardProps> = ({ data }) => {
         icon="shopping-cart"
         onClick={() => handleAddToCart(data)}
       >
-        Add to Cart
+        Añadir al carrito
       </Button>
     </Card>
   );

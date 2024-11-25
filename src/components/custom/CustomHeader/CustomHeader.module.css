@@ -1,4 +1,3 @@
-
 .header {
   background-color: var(--color-secondary);
   padding: var(--padding-medium);
@@ -32,12 +31,7 @@
   cursor: pointer;
 }
 
-.header__cart-icon {
-  color: var(--color-primary);
-  font-size: 25px;
-}
-
-.filters__spacer {
+.header__spacer {
   flex-grow: 1;
 }
 .header__cart_count {

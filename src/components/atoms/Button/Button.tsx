@@ -29,8 +29,8 @@ export const Button: FC<ButtonProps> = ({
         ${variant === 'primary' ? styles.primary : styles.secondary}
         ${block ? styles.block : styles.auto}
         `}
-      onClick={onClick}
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
       {icon && <Icon name={icon} color={variant === 'primary' ? '#FFFFFF' : '#245558'} size={16} />}
