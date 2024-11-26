@@ -33,6 +33,7 @@ export const Button: FC<ButtonProps> = ({
       onClick={onClick}
     >
       {children}
+      {/* usemos un enum */}
       {icon && <Icon name={icon} color={variant === 'primary' ? '#FFFFFF' : '#245558'} size={16} />}
     </button>
   );

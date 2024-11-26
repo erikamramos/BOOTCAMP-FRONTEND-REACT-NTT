@@ -1,3 +1,4 @@
+// permite registrar si pongo nombres apellidos, direccion y referencia vacios
 import { FC, useState } from 'react';
 import SuccessModal from '../../custom/SuccessModal/SuccessModal';
 import { Card, FormField } from '../../molecules';
@@ -10,6 +11,7 @@ import { useCart } from '../../../hooks/useCart';
 const FormShipping: FC = () => {
   const { dispatch } = useCart();
 
+  // se debe tipar para que solo acepte propiedades conocidas
   const [formValues, setFormValues] = useState({
     name: '',
     lastname: '',
@@ -19,6 +21,8 @@ const FormShipping: FC = () => {
     reference: '',
     phone: '',
   });
+
+  // se debe tipar para que solo acepte propiedades conocidas
   const [errors, setErrors] = useState({
     name: '',
     lastname: '',

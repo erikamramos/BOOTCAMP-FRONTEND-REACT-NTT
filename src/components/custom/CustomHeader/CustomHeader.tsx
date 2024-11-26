@@ -10,6 +10,7 @@ const Header: FC = () => {
   const { state } = useCart();
 
   const handleRedirect = () => {
+    // no palabras m'agicas usemos un enum
     navigate('/cart');
   };
   return (

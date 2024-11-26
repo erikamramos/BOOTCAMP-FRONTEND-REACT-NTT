@@ -5,6 +5,7 @@ import CartPage from './pages/Cart';
 import NotFoundPage from './pages/Helpers/NotFound';
 
 const AppRouter: FC = () => {
+  // usemos enum para definir los paths
   return (
     <Router>
       <Routes>

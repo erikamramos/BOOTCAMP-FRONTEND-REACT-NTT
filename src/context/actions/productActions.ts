@@ -28,6 +28,7 @@ export const filterProductsByCategory = async (
   category: string,
   products: Product[],
 ) => {
+  // usemos enum no palabras m'agicas
   if (!category || category === 'all') {
     dispatch({ type: 'FILTER_PRODUCTS', payload: products });
     return;

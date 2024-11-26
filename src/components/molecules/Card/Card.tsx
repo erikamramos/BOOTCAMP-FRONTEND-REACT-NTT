@@ -1,9 +1,6 @@
-import { FC, ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import styles from './Card.module.css';
 
-type CardProps = {
-  children: ReactNode;
-};
-export const Card: FC<CardProps> = ({ children }) => {
+export const Card: FC<PropsWithChildren> = ({ children }) => {
   return <div className={styles.card}>{children}</div>;
 };

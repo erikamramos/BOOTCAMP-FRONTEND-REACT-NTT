@@ -21,6 +21,7 @@ const CartPage: FC = () => {
           </Grid>
         )}
         {state.totalItems == 0 && (
+          // no aplicar estilos directamente mantener un estandar
           <div style={{ textAlign: 'center', marginTop: '50px' }}>
             <img src="../src/assets/images/empty-cart.png" width={300} alt="" />
             <h1>Carrito Vacío</h1>
