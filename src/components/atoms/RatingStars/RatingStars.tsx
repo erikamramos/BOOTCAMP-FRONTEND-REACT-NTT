@@ -8,6 +8,7 @@ type RatingStarsProps = {
 export const RatingStars: FC<RatingStarsProps> = ({ rating }) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+  // que es 5?
   const emptyStars = 5 - fullStars - halfStar;
 
   const stars = [

@@ -1,10 +1,6 @@
-import { FC, ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import styles from './Footer.module.css';
 
-type FooterProps = {
-  children: ReactNode;
-};
-
-export const Footer: FC<FooterProps> = ({ children }) => {
+export const Footer: FC<PropsWithChildren> = ({ children }) => {
   return <footer className={styles.footer}>{children}</footer>;
 };

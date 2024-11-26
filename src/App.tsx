@@ -4,13 +4,11 @@ import { ProductProvider } from './context/store/productContext';
 
 function App() {
   return (
-    <>
-      <ProductProvider>
-        <CartProvider>
-          <AppRouter></AppRouter>
-        </CartProvider>
-      </ProductProvider>
-    </>
+    <ProductProvider>
+      <CartProvider>
+        <AppRouter />
+      </CartProvider>
+    </ProductProvider>
   );
 }
 

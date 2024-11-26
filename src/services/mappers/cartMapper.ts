@@ -8,6 +8,7 @@ export const mapCart = (product: Product): Cart => {
     description: product.description,
     price: product.price,
     thumbnail: product.thumbnail,
+    // 1 por defecto?
     quantity: 1,
     totalPrice: product.price,
   };

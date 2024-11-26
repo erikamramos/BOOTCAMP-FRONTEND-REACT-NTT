@@ -12,6 +12,7 @@ export const Input: FC<InputProps> = ({ id, icon, className, ...props }) => {
   return (
     <div className={`${styles.input} ${className}`}>
       <input id={id} className={styles.input__field} {...props} />
+      {/* // no textos en duro */}
       {icon && <Icon name={icon} color={'#245558'} size={20} />}
     </div>
   );

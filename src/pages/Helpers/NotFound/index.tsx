@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+// esto podr'ia ir como un componente
 const NotFoundPage: FC = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
