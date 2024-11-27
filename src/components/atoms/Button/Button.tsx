@@ -1,9 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import styles from './Button.module.css';
 import { Icon } from '../Icon/Icon';
+import { ButtonConfig } from '../../../config/constants/config';
 
 type ButtonProps = {
-  children: ReactNode;
   onClick?: () => void;
   variant?: 'primary' | 'secondary';
   block?: boolean;
@@ -12,7 +12,7 @@ type ButtonProps = {
   className?: string;
 };
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
   onClick,
   variant = 'primary',
@@ -33,7 +33,13 @@ export const Button: FC<ButtonProps> = ({
       onClick={onClick}
     >
       {children}
-      {icon && <Icon name={icon} color={variant === 'primary' ? '#FFFFFF' : '#245558'} size={16} />}
+      {icon && (
+        <Icon
+          name={icon}
+          color={variant === 'primary' ? ButtonConfig.PRIMARY_COLOR : ButtonConfig.SECONDARY_COLOR}
+          size={ButtonConfig.DEFAULT_SIZE}
+        />
+      )}
     </button>
   );
 };

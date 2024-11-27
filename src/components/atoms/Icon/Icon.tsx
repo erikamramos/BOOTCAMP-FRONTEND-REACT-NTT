@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { IconConfig } from '../../../config/constants/config';
 
 interface IconProps {
   name: string;
@@ -7,7 +8,12 @@ interface IconProps {
   className?: string;
 }
 
-export const Icon: FC<IconProps> = ({ name, color = 'currentColor', size = 24, className }) => {
+export const Icon: FC<IconProps> = ({
+  name,
+  color = IconConfig.DEFAULT_COLOR,
+  size = IconConfig.DEFAULT_SIZE,
+  className,
+}) => {
   const iconSrc = `/src/assets/icons/${name}.svg`;
 
   return (

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styles from './RatingStars.module.css';
+import { RatingStarsConfig } from '../../../config/constants/config';
 
 type RatingStarsProps = {
   rating: number;
@@ -8,7 +9,7 @@ type RatingStarsProps = {
 export const RatingStars: FC<RatingStarsProps> = ({ rating }) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5 ? 1 : 0;
-  const emptyStars = 5 - fullStars - halfStar;
+  const emptyStars = RatingStarsConfig.DEFAULT_STARS_SIZE - fullStars - halfStar;
 
   const stars = [
     ...Array(fullStars)

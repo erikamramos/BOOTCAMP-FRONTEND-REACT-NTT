@@ -5,15 +5,17 @@ import { RatingStars, Button } from '../../atoms';
 import { useCart } from '../../../hooks/useCart';
 import { Card } from '../../molecules';
 import { mapCart } from '../../../services/mappers/cartMapper';
+import { CartConfig } from '../../../config/constants/config';
 
 type ProductCardProps = {
   data: Product;
 };
 const ProductCard: FC<ProductCardProps> = ({ data }) => {
   const { dispatch } = useCart();
+  const defaultQuantity = CartConfig.DEFAULT_QUANTITY;
 
   const handleAddToCart = (product: Product) => {
-    dispatch({ type: 'ADD_TO_CART', payload: mapCart(product) });
+    dispatch({ type: 'ADD_TO_CART', payload: mapCart(product, defaultQuantity) });
   };
   return (
     <Card>

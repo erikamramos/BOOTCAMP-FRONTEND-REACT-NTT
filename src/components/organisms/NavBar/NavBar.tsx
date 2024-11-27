@@ -1,11 +1,7 @@
-import { FC, ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import styles from './NavBar.module.css';
 
-type NavBarProps = {
-  children: ReactNode;
-};
-
-export const NavBar: FC<NavBarProps> = ({ children }) => {
+export const NavBar: FC<PropsWithChildren> = ({ children }) => {
   return (
     <header className={styles.navbar}>
       <div className={styles.navbar__container}>{children}</div>
