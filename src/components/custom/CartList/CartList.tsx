@@ -57,7 +57,11 @@ const CartList: FC = () => {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <div onClick={() => removeFromCart(dispatch, item.id)} className="button_icon">
+                  <div
+                    aria-label="Eliminar"
+                    onClick={() => removeFromCart(dispatch, item.id)}
+                    className="button_icon"
+                  >
                     <Icon name="trash" color="white" size={20} />
                   </div>
                 </TableCell>
