@@ -1,14 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { Grid } from '@/components/atoms/Grid/Grid';
 
-// Define explicit types for Grid props
 interface GridProps {
   children: React.ReactNode;
   gap?: number;
   className?: string;
 }
 
-// Helper to render Grid with props
 const renderGrid = (props: GridProps) => {
   return render(<Grid {...props}>{props.children}</Grid>);
 };
