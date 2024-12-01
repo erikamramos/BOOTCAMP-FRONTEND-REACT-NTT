@@ -34,9 +34,7 @@ describe('RatingStars Component', () => {
     const emptyStars = screen
       .getAllByText('☆')
       .filter((star) => star.className.includes('rating__star--empty'));
-    expect(emptyStars).toHaveLength(
-      RatingStarsConfig.DEFAULT_STARS_SIZE - 4, // 3 full stars + 1 half star = 4
-    );
+    expect(emptyStars).toHaveLength(RatingStarsConfig.DEFAULT_STARS_SIZE - 4);
   });
 
   it('should render all empty stars for a rating of 0', () => {
