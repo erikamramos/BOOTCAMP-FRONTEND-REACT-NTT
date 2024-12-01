@@ -10,7 +10,6 @@ import { categoriesMock, productsMock } from '@/utils/__mocks__/products';
 
 describe('productReducer', () => {
   const mockProducts: Product[] = productsMock;
-
   const mockCategories: Category[] = categoriesMock;
 
   it('should return the initial state when no action is provided', () => {

@@ -5,7 +5,6 @@ import { cartMock } from '@/utils/__mocks__/cart';
 
 describe('cartReducer', () => {
   const mockProduct: Cart = cartMock[0];
-
   const mockProduct2: Cart = cartMock[1];
 
   it('should return the initial state when no action is provided', () => {
