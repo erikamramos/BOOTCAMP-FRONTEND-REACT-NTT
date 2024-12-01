@@ -7,7 +7,6 @@ const fetchInstance = async <T>(endpoint: string): Promise<FetchResponse<T>> => 
   try {
     const response = await fetch(`${baseUrl}${endpoint}`);
     const responseBody = (await response.json()) as T;
-
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }

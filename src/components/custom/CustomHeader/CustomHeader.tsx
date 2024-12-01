@@ -20,13 +20,13 @@ const Header: FC = () => {
         <img src="./src/assets/images/logo.png" alt="MyMarket Logo" />
       </div>
       <div className={styles.header__spacer}></div>
-      <div onClick={handleRedirectCart} className={styles.header__cart}>
+      <div aria-label="CartButton" onClick={handleRedirectCart} className={styles.header__cart}>
         <Icon name="shopping-cart" color={'#245558'} size={25} />
         <span id="cart-count" className={styles.header__cart_count}>
           {state.totalItems}
         </span>
       </div>
-      <div className={styles.header__cart}>
+      <div aria-label="UserButton" className={styles.header__cart}>
         <Icon name="user" color={HeaderConfig.CART_ICON_COLOR} size={HeaderConfig.CART_ICON_SIZE} />
       </div>
     </NavBar>

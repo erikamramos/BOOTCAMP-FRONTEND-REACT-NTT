@@ -9,11 +9,12 @@ describe('Button Component', () => {
   it('renders component', () => {
     const { container } = renderComponent();
     expect(container).toMatchSnapshot();
-    expect(screen.getByText(/click me/i)).toBeInTheDocument();
+    expect(screen.getByText('Click me')).toBeInTheDocument();
   });
 
   it('renders with different children', () => {
-    renderComponent({ children: 'Submit' });
-    expect(screen.getByText(/submit/i)).toBeInTheDocument();
+    const { container } = renderComponent({ children: 'Submit' });
+    expect(container).toMatchSnapshot();
+    expect(screen.getByText('Submit')).toBeInTheDocument();
   });
 });

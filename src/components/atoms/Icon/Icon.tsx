@@ -18,6 +18,7 @@ export const Icon: FC<IconProps> = ({
 
   return (
     <svg
+      aria-label={`icon-${name}`}
       className={className}
       width={size}
       height={size}

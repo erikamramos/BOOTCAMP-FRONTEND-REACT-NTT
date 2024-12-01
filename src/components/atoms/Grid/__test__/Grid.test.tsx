@@ -7,38 +7,38 @@ interface GridProps {
   className?: string;
 }
 
-const renderGrid = (props: GridProps) => {
+const renderComponent = (props: GridProps) => {
   return render(<Grid {...props}>{props.children}</Grid>);
 };
 
 describe('Grid Component', () => {
   it('render component with children', () => {
-    renderGrid({ children: [<p key="1">Child 1</p>, <p key="2">Child 2</p>] });
+    renderComponent({ children: [<p key="1">Child 1</p>, <p key="2">Child 2</p>] });
     expect(screen.getByText('Child 1')).toBeInTheDocument();
     expect(screen.getByText('Child 2')).toBeInTheDocument();
   });
 
   it('render component applies the default gap style', () => {
-    renderGrid({ children: <p>Default Gap Test</p> });
+    renderComponent({ children: <p>Default Gap Test</p> });
     const gridElement = screen.getByText('Default Gap Test').parentElement;
     expect(gridElement).toHaveStyle('gap: 16px');
   });
 
   it('render component applies the gap style based on the prop', () => {
-    renderGrid({ children: <p>Gap Test</p>, gap: 24 });
+    renderComponent({ children: <p>Gap Test</p>, gap: 24 });
     const gridElement = screen.getByText('Gap Test').parentElement;
     expect(gridElement).toHaveStyle('gap: 24px');
   });
 
   it('render component include a className prop', () => {
-    renderGrid({ children: <p>Class Test</p>, className: 'custom-class' });
+    renderComponent({ children: <p>Class Test</p>, className: 'custom-class' });
     const gridElement = screen.getByText('Class Test').parentElement;
     expect(gridElement).toHaveClass('custom-class');
   });
 
-  it('applies default styles from CSS Modules', () => {
-    renderGrid({ children: <p>Default Style Test</p> });
-    const gridElement = screen.getByText('Default Style Test').parentElement;
+  it('render component include default className', () => {
+    renderComponent({ children: <p>Default Class Test</p> });
+    const gridElement = screen.getByText('Default Class Test').parentElement;
     expect(gridElement).toHaveClass('grid');
   });
 });

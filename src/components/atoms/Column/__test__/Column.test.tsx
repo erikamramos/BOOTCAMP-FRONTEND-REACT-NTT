@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Column } from '@/components/atoms/Column/Column';
 
 const renderComponent = (
-  props: { children: JSX.Element; span?: number; className?: string } = {
+  props: { children: React.ReactNode; span?: number; className?: string } = {
     children: <p>Default Test</p>,
     span: 1,
     className: '',
@@ -23,9 +23,9 @@ describe('Column Component', () => {
     expect(columnElement).toHaveClass('custom-class');
   });
 
-  it('applies default styles from CSS Modules', () => {
-    renderComponent({ children: <p>Default Style Test</p> });
-    const columnElement = screen.getByText('Default Style Test').parentElement;
+  it('render component include default className', () => {
+    renderComponent({ children: <p>Default Class Test</p> });
+    const columnElement = screen.getByText('Default Class Test').parentElement;
     expect(columnElement).toHaveClass('col');
   });
 });

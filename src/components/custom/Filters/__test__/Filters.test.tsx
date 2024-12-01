@@ -1,12 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useProducts } from '@/hooks/useProducts';
-import Filters from './Filters';
+import Filters from '@/components/custom/Filters/Filters';
 import {
   filterProductsByCategory,
   loadCategories,
   searchProducts,
 } from '@/context/actions/productActions';
-import { filterState } from '@/services/__mocks__/filterState';
+import { categoriesMock, productsMock } from '@/utils/__mocks__/products';
 
 jest.mock('@/hooks/useProducts', () => ({
   useProducts: jest.fn(),
@@ -19,16 +19,10 @@ jest.mock('@/context/actions/productActions', () => ({
 }));
 
 describe('Filters Component', () => {
-  const mockState = filterState;
+  const mockState = { products: productsMock, categories: categoriesMock };
+  const mockDispatch = jest.fn();
 
   const renderComponent = () => {
-    const mockDispatch = jest.fn();
-
-    (useProducts as jest.Mock).mockReturnValue({
-      state: mockState,
-      dispatch: mockDispatch,
-    });
-
     return {
       ...render(<Filters />),
       mockDispatch,
@@ -37,14 +31,18 @@ describe('Filters Component', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    (useProducts as jest.Mock).mockReturnValue({
+      state: mockState,
+      dispatch: mockDispatch,
+    });
   });
 
-  it('should call loadCategories on mount', () => {
+  it('should loadCategories on mount', () => {
     const { mockDispatch } = renderComponent();
     expect(loadCategories).toHaveBeenCalledWith(mockDispatch);
   });
 
-  it('should filter products by category when a category is selected', () => {
+  it('should filter products by category selected', () => {
     const { mockDispatch } = renderComponent();
     const select = screen.getByRole('combobox');
     fireEvent.change(select, { target: { value: 'electronics' } });
@@ -62,7 +60,7 @@ describe('Filters Component', () => {
     expect(searchProducts).toHaveBeenCalledWith(mockDispatch, 'phone', mockState.products);
   });
 
-  it('should render category options correctly', () => {
+  it('should render category options', () => {
     renderComponent();
     const select = screen.getByRole('combobox');
     expect(select).toBeInTheDocument();

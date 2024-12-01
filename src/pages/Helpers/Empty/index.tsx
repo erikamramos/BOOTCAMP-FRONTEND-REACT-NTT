@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import MainLayout from '../../../components/layout/MainLayout/MainLayout';
+
 const EmptyPage: FC = () => {
   return (
     <MainLayout>

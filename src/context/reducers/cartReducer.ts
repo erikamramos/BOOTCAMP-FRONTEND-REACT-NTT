@@ -50,13 +50,13 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
 
     case 'REMOVE_FROM_CART': {
       const updatedCart = state.cart.filter((item) => item.id !== action.payload);
-      const totalItemsRemoved =
-        state.cart.find((item) => item.id === action.payload)?.quantity || 0;
+
+      const totalItems = updatedCart.reduce((sum, item) => sum + item.quantity, 0);
 
       return {
         ...state,
         cart: updatedCart,
-        totalItems: state.totalItems - totalItemsRemoved,
+        totalItems,
         totalPrice: calculateTotalPrice(updatedCart),
       };
     }

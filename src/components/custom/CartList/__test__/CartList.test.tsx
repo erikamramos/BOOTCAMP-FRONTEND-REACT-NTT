@@ -1,9 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import CartList from './CartList';
+import { render, screen, fireEvent, RenderResult } from '@testing-library/react';
+import CartList from '../CartList';
 import { useCart } from '@/hooks/useCart';
 import { updateCartQuantity, removeFromCart } from '@/context/actions/cartActions';
 import { formatPrice } from '@/utils/formatPrice';
-import { cartStateMock } from '@/services/__mocks__/cartState';
+import { cartStateMock } from '@/utils/__mocks__/cart';
 
 jest.mock('@/hooks/useCart');
 jest.mock('@/context/actions/cartActions', () => ({
@@ -13,6 +13,10 @@ jest.mock('@/context/actions/cartActions', () => ({
 jest.mock('@/utils/formatPrice', () => ({
   formatPrice: jest.fn(),
 }));
+
+const renderComponent = async (): Promise<RenderResult> => {
+  return render(<CartList />);
+};
 
 describe('CartList Component', () => {
   const mockDispatch = jest.fn();
@@ -24,20 +28,19 @@ describe('CartList Component', () => {
     (formatPrice as jest.Mock).mockReturnValue('40.00');
   });
 
-  it('renders component cartList', () => {
-    render(<CartList />);
-
-    expect(screen.getByText('Product 1')).toBeInTheDocument();
-    expect(screen.getByText('Product 2')).toBeInTheDocument();
+  it('renders component', async () => {
+    renderComponent();
+    expect(screen.getByText('Laptop')).toBeInTheDocument();
+    expect(screen.getByText('Phone')).toBeInTheDocument();
   });
 
-  it('displays the correct total price', () => {
-    render(<CartList />);
+  it('render displays the correct total price', async () => {
+    renderComponent();
     expect(screen.getByText(/Total a pagar/i)).toHaveTextContent('$40.00');
   });
 
-  it('calls updateCartQuantity when incrementing or decrementing the quantity', () => {
-    render(<CartList />);
+  it('calls updateCartQuantity when incrementing or decrementing the quantity', async () => {
+    renderComponent();
 
     const incrementButton = screen.getAllByLabelText('Increment')[0];
     fireEvent.click(incrementButton);
@@ -48,10 +51,10 @@ describe('CartList Component', () => {
     expect(updateCartQuantity).toHaveBeenCalledWith(mockDispatch, 1, 1);
   });
 
-  it('calls removeFromCart when clicking the remove button', () => {
-    render(<CartList />);
+  it('calls removeFromCart when clicking the remove button', async () => {
+    renderComponent();
 
-    const removeButtons = screen.getAllByLabelText(/Eliminar/i);
+    const removeButtons = screen.getAllByLabelText('Eliminar');
     fireEvent.click(removeButtons[0]);
     expect(removeFromCart).toHaveBeenCalledWith(mockDispatch, 1);
   });

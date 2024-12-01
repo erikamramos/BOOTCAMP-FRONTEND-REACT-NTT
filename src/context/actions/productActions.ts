@@ -19,7 +19,7 @@ export const loadProducts = async (dispatch: Dispatch<ProductAction>) => {
     const products: Product[] = await fetchProducts();
     dispatch({ type: 'LOAD_PRODUCTS', payload: products });
   } catch (error) {
-    console.error('Error loading categories:', error);
+    console.error('Error loading products:', error);
   }
 };
 
