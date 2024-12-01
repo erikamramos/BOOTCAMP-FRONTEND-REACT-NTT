@@ -1,0 +1,61 @@
+export const categoriesMock = [
+  { slug: 'electronics', name: 'Electronics' },
+  { slug: 'books', name: 'Books' },
+  { slug: 'clothing', name: 'Clothing' },
+];
+
+export const productsMock = [
+  {
+    id: 1,
+    title: 'Laptop',
+    description: 'A powerful laptop for professionals.',
+    price: 1200,
+    discountPercentage: 10,
+    rating: 4.5,
+    stock: 50,
+    brand: 'TechBrand',
+    category: 'electronics',
+    thumbnail: 'https://example.com/laptop-thumbnail.jpg',
+    images: [],
+  },
+  {
+    id: 2,
+    title: 'Book',
+    description: 'A novel',
+    price: 20,
+    discountPercentage: 10,
+    rating: 4.5,
+    stock: 50,
+    brand: 'Crisol',
+    category: 'books',
+    thumbnail: 'https://example.com/book-thumbnail.jpg',
+    images: [],
+  },
+  {
+    id: 3,
+    title: 'Phone',
+    description: 'A powerful phone for professionals.',
+    price: 1200,
+    discountPercentage: 10,
+    rating: 4.5,
+    stock: 50,
+    brand: 'TechBrand',
+    category: 'electronics',
+    thumbnail: 'https://example.com/phone-thumbnail.jpg',
+    images: [],
+  },
+];
+
+export const productMock = {
+  id: 1,
+  title: 'Laptop',
+  description: 'A powerful laptop for professionals.',
+  price: 1200,
+  discountPercentage: 10,
+  rating: 4.5,
+  stock: 50,
+  brand: 'TechBrand',
+  category: 'electronics',
+  thumbnail: 'https://example.com/laptop-thumbnail.jpg',
+  images: [],
+};

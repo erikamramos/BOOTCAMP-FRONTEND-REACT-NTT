@@ -10,6 +10,10 @@ export default {
     '^.+\\.svg$': 'jest-transformer-svg',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
-
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['json', 'lcov', 'text', 'clover'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts', '!src/config/**'],
+  testMatch: ['**/*.test.(ts|tsx)'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };
