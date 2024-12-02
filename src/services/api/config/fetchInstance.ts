@@ -1,14 +1,42 @@
 import { envs } from '../../../config/envs';
-import { FetchResponse } from '../../../models/FetchResponse';
+import { FetchResponse, FetchOptions } from '../../../models/FetchConfig';
 
-const fetchInstance = async <T>(endpoint: string): Promise<FetchResponse<T>> => {
+const fetchInstance = async <T>(
+  endpoint: string,
+  options: FetchOptions = {},
+): Promise<FetchResponse<T>> => {
   const baseUrl = envs.BASE_URL;
+  const token = localStorage.getItem('authToken');
+
+  const defaultOptions: RequestInit = {
+    headers: {},
+  };
+
+  if (token) {
+    defaultOptions.headers = {
+      ...defaultOptions.headers,
+      Authorization: `Bearer ${token}`,
+    };
+  }
+
+  const mergedOptions = {
+    ...defaultOptions,
+    ...options,
+    headers: {
+      ...defaultOptions.headers,
+      ...options.headers,
+    },
+  };
 
   try {
-    const response = await fetch(`${baseUrl}${endpoint}`);
+    const response = await fetch(`${baseUrl}${endpoint}`, mergedOptions);
     const responseBody = (await response.json()) as T;
     if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
+      throw {
+        ...responseBody,
+        status: response.status,
+        statusText: response.statusText,
+      };
     }
 
     return {

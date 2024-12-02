@@ -1,18 +1,18 @@
-import { ProductsResponse, Product } from '../../models/Product';
+import { ProductsResponse } from '../../models/Product';
 import { mapProducts } from '../mappers/productMapper';
 import fetchInstance from './config/fetchInstance';
 import { Paths } from './config/paths';
 
-export const fetchProducts = async (): Promise<Product[]> => {
-  const response = await fetchInstance<ProductsResponse>(`${Paths.Products}?limit=60`);
+export const fetchProducts = async (query: string = '') => {
+  const response = await fetchInstance<ProductsResponse>(`${Paths.Products}/search${query}`);
   const data = await response.data;
-  return mapProducts(data.products);
+  return { products: mapProducts(data.products), total: response.data.total };
 };
 
-export const fetchProductsByCategories = async (category: string): Promise<Product[]> => {
+export const fetchProductsByCategories = async (category: string, query: string = '') => {
   const response = await fetchInstance<ProductsResponse>(
-    `${Paths.ProductsCategory}/${category}?limit=10`,
+    `${Paths.ProductsCategory}/${category}${query}`,
   );
   const data = response.data;
-  return mapProducts(data.products);
+  return { products: mapProducts(data.products), total: response.data.total };
 };
