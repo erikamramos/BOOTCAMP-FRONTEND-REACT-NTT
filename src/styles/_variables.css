@@ -2,6 +2,7 @@
   --font-primary: 'Poppins', sans-serif;
 
   --color-primary: #245558;
+  --color-primary-light: #2c9095;
   --color-secondary: #ffffff;
   --color-accent: #ffd570;
   --color-black: #333333;
@@ -13,6 +14,8 @@
   --color-card-shadow: rgba(0, 0, 0, 0.16);
   --color-button-bg: #f3f5ed;
   --shadow-inset: #24555812 0px -50px 36px -28px inset;
+  --color-primary-grad: hsla(183, 42%, 24%, 0.8);
+  --color-primary-light-grad: hsla(183, 54%, 38%, 0.3);
 
   --padding-none: 0rem;
   --padding-small: 0.5rem;

@@ -26,3 +26,7 @@ export enum HeaderConfig {
 export enum CartConfig {
   DEFAULT_QUANTITY = 1,
 }
+
+export enum ProductListConfig {
+  DEFAULT_ITEMS_PER_PAGE = 20,
+}
