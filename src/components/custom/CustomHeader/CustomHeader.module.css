@@ -31,9 +31,21 @@
   cursor: pointer;
 }
 
+.header__user {
+  text-align: right;
+}
+
+.header__logout {
+  background-color: transparent;
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+}
+
 .header__spacer {
   flex-grow: 1;
 }
+
 .header__cart_count {
   border-radius: var(--radius-full);
   padding: 0.2rem 0.5rem;

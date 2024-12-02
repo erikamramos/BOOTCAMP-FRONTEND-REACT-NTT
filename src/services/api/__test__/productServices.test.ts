@@ -26,35 +26,47 @@ describe('productServices', () => {
     (fetchInstance as jest.Mock).mockResolvedValue({ data: mockProductsResponse });
     (mapProducts as jest.Mock).mockReturnValue(mockProductsResponse.products);
 
-    const result = await fetchProducts();
+    const query = '?limit=10&skip=0';
+    const result = await fetchProducts(query);
 
-    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.Products}?limit=60`);
+    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.Products}/search${query}`);
     expect(mapProducts).toHaveBeenCalledWith(mockProductsResponse.products);
-    expect(result).toEqual(mockProductsResponse.products);
+    expect(result).toEqual({
+      products: mockProductsResponse.products,
+      total: mockProductsResponse.total,
+    });
   });
 
   it('should handle errors in fetchProducts', async () => {
+    const query = '?limit=10&skip=0';
     (fetchInstance as jest.Mock).mockRejectedValue(new Error('API Error'));
 
-    await expect(fetchProducts()).rejects.toThrow('API Error');
-    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.Products}?limit=60`);
+    await expect(fetchProducts(query)).rejects.toThrow('API Error');
+    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.Products}/search${query}`);
   });
 
   it('should call fetchInstance with the correct path for fetchProductsByCategories', async () => {
     (fetchInstance as jest.Mock).mockResolvedValue({ data: mockProductsResponse });
     (mapProducts as jest.Mock).mockReturnValue(mockProductsResponse.products);
 
-    const result = await fetchProductsByCategories('electronics');
+    const category = 'electronics';
+    const query = '?limit=10&skip=0';
+    const result = await fetchProductsByCategories(category, query);
 
-    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.ProductsCategory}/electronics?limit=10`);
+    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.ProductsCategory}/${category}${query}`);
     expect(mapProducts).toHaveBeenCalledWith(mockProductsResponse.products);
-    expect(result).toEqual(mockProductsResponse.products);
+    expect(result).toEqual({
+      products: mockProductsResponse.products,
+      total: mockProductsResponse.total,
+    });
   });
 
   it('should handle errors in fetchProductsByCategories', async () => {
+    const category = 'electronics';
+    const query = '?limit=10&skip=0';
     (fetchInstance as jest.Mock).mockRejectedValue(new Error('Category Error'));
 
-    await expect(fetchProductsByCategories('electronics')).rejects.toThrow('Category Error');
-    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.ProductsCategory}/electronics?limit=10`);
+    await expect(fetchProductsByCategories(category, query)).rejects.toThrow('Category Error');
+    expect(fetchInstance).toHaveBeenCalledWith(`${Paths.ProductsCategory}/${category}${query}`);
   });
 });

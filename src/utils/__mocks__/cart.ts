@@ -54,3 +54,7 @@ export const cartMock: Cart[] = [
     totalPrice: 800,
   },
 ];
+
+export const cartInitialMock = {
+  state: { totalItems: 3 },
+};

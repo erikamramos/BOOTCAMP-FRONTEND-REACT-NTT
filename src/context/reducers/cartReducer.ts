@@ -23,7 +23,6 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
       const productIdx = state.cart.findIndex((item) => item.id === action.payload.id);
 
       if (productIdx === -1 && state.cart.some((item) => item.id === action.payload.id)) {
-        console.log('Duplicate action ignored');
         return state;
       }
 

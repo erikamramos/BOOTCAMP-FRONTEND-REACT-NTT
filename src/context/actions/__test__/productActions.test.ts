@@ -51,16 +51,20 @@ describe('Product Actions', () => {
   });
 
   describe('loadProducts', () => {
-    it('should dispatch LOAD_PRODUCTS with fetched products', async () => {
-      const mockProducts = productsMock;
-      (fetchProducts as jest.Mock).mockResolvedValue(mockProducts);
+    it('should dispatch LOAD_PRODUCTS and SET_TOTAL_PRODUCTS with fetched data', async () => {
+      const mockResponse = { products: productsMock, total: 50 };
+      (fetchProducts as jest.Mock).mockResolvedValue(mockResponse);
 
-      await loadProducts(mockDispatch);
+      await loadProducts(mockDispatch, 10, 0);
 
-      expect(fetchProducts).toHaveBeenCalled();
+      expect(fetchProducts).toHaveBeenCalledWith('?limit=10&skip=0');
       expect(mockDispatch).toHaveBeenCalledWith({
         type: 'LOAD_PRODUCTS',
-        payload: mockProducts,
+        payload: mockResponse.products,
+      });
+      expect(mockDispatch).toHaveBeenCalledWith({
+        type: 'SET_TOTAL_PRODUCTS',
+        payload: mockResponse.total,
       });
     });
 
@@ -68,37 +72,53 @@ describe('Product Actions', () => {
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
       (fetchProducts as jest.Mock).mockRejectedValue(new Error('Fetch Error'));
 
-      await loadProducts(mockDispatch);
+      await loadProducts(mockDispatch, 10, 0);
 
-      expect(fetchProducts).toHaveBeenCalled();
+      expect(fetchProducts).toHaveBeenCalledWith('?limit=10&skip=0');
       expect(consoleSpy).toHaveBeenCalledWith('Error loading products:', expect.any(Error));
       consoleSpy.mockRestore();
     });
   });
 
   describe('filterProductsByCategory', () => {
-    it('should dispatch FILTER_PRODUCTS with all products for "all" category', async () => {
-      const mockProducts = productsMock;
-
-      await filterProductsByCategory(mockDispatch, 'all', mockProducts);
+    it('should dispatch FILTER_PRODUCTS with all products for empty category', async () => {
+      await filterProductsByCategory(mockDispatch, '', productsMock);
 
       expect(mockDispatch).toHaveBeenCalledWith({
         type: 'FILTER_PRODUCTS',
-        payload: mockProducts,
+        payload: productsMock,
       });
     });
 
-    it('should fetch and dispatch filtered products for a specific category', async () => {
-      const mockFilteredProducts = productsMock;
-      (fetchProductsByCategories as jest.Mock).mockResolvedValue(mockFilteredProducts);
+    it('should fetch and dispatch filtered products with SET_TOTAL_PRODUCTS', async () => {
+      const mockResponse = { products: productsMock, total: 20 };
+      (fetchProductsByCategories as jest.Mock).mockResolvedValue(mockResponse);
 
-      await filterProductsByCategory(mockDispatch, 'electronics', []);
+      await filterProductsByCategory(mockDispatch, 'electronics', [], 10, 0);
 
-      expect(fetchProductsByCategories).toHaveBeenCalledWith('electronics');
+      expect(fetchProductsByCategories).toHaveBeenCalledWith('electronics', '?limit=10&skip=0');
       expect(mockDispatch).toHaveBeenCalledWith({
         type: 'FILTER_PRODUCTS',
-        payload: mockFilteredProducts,
+        payload: mockResponse.products,
       });
+      expect(mockDispatch).toHaveBeenCalledWith({
+        type: 'SET_TOTAL_PRODUCTS',
+        payload: mockResponse.total,
+      });
+    });
+
+    it('should handle errors gracefully', async () => {
+      const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+      (fetchProductsByCategories as jest.Mock).mockRejectedValue(new Error('Fetch Error'));
+
+      await filterProductsByCategory(mockDispatch, 'electronics', [], 10, 0);
+
+      expect(fetchProductsByCategories).toHaveBeenCalledWith('electronics', '?limit=10&skip=0');
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'Error filtering products by category:',
+        expect.any(Error),
+      );
+      consoleSpy.mockRestore();
     });
   });
 

@@ -5,9 +5,15 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { act } from 'react';
 import { AppRoutes } from '@/router/AppRoutes';
 import { cartStateMock } from '@/utils/__mocks__/cart';
+import { useAuth } from '@/hooks/useAuth';
+import { authMock } from '@/utils/__mocks__/user';
 
 jest.mock('@/hooks/useCart', () => ({
   useCart: jest.fn(),
+}));
+
+jest.mock('@/hooks/useAuth', () => ({
+  useAuth: jest.fn(),
 }));
 
 jest.mock('react-router-dom', () => ({
@@ -17,6 +23,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('EmptyPage component', () => {
   const mockUseCart = useCart as jest.Mock;
+  const mockuseAuth = useAuth as jest.Mock;
   const mockNavigate = jest.fn();
 
   beforeEach(() => {
@@ -29,6 +36,7 @@ describe('EmptyPage component', () => {
       state: cartStateMock,
       dispatch: jest.fn(),
     });
+    mockuseAuth.mockReturnValue(authMock);
     await act(async () => {
       render(
         <MemoryRouter initialEntries={[AppRoutes.CART_EMPTY]}>
