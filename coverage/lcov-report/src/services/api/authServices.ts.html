@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -81,38 +81,38 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AuthResponse, LoginPayload } from '@/models/auth';
-<span class="cstat-no" title="statement not covered" >import fetchInstance from './config/fetchInstance';</span>
-<span class="cstat-no" title="statement not covered" >import { Paths } from './config/paths';</span>
-<span class="cstat-no" title="statement not covered" >import { mapAuthResponse } from '../mappers/authMapper';</span>
+import fetchInstance from './config/fetchInstance';
+import { Paths } from './config/paths';
+import { mapAuthResponse } from '../mappers/authMapper';
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >fetchAuth = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >a</span>sync (d</span>ataAuth: LoginPayload): Promise&lt;AuthResponse&gt; =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
-  const formdata = <span class="cstat-no" title="statement not covered" >new FormData();</span>
-<span class="cstat-no" title="statement not covered" >  formdata.append('username', dataAuth.username);</span>
-<span class="cstat-no" title="statement not covered" >  formdata.append('password', dataAuth.password);</span>
+export const fetchAuth = async (dataAuth: LoginPayload): Promise&lt;AuthResponse&gt; =&gt; {
+  const formdata = new FormData();
+  formdata.append('username', dataAuth.username);
+  formdata.append('password', dataAuth.password);
 &nbsp;
-  const response = <span class="cstat-no" title="statement not covered" >await fetchInstance&lt;AuthResponse&gt;(`${Paths.Auth}`, {</span>
+  const response = await fetchInstance&lt;AuthResponse&gt;(`${Paths.Auth}`, {
     method: 'POST',
     body: formdata,
   });
-  const data = <span class="cstat-no" title="statement not covered" >mapAuthResponse(response.data);</span>
-<span class="cstat-no" title="statement not covered" >  return data;</span>
+  const data = mapAuthResponse(response.data);
+  return data;
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -121,7 +121,7 @@ export const <span class="cstat-no" title="statement not covered" >fetchAuth = <
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-03T05:28:44.417Z
+                at 2024-12-03T06:10:44.041Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
