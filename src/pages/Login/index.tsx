@@ -5,15 +5,14 @@ import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateText } from '../../utils/validations';
 import ForgotPasswordModal from '../../components/custom/ForgotPassModal/ForgotPassModal';
+import { FormLoginData } from '../../models/Forms';
+import { AppRoutes } from '../../router/AppRoutes';
 
 const LoginPage: FC = () => {
   const { loginUser } = useAuth();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ username: '', password: '' });
-  const [errors, setErrors] = useState({
-    username: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState<FormLoginData>({ username: '', password: '' });
+  const [errors, setErrors] = useState<FormLoginData>({ username: '', password: '' });
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,12 +34,10 @@ const LoginPage: FC = () => {
     if (validateForm()) {
       try {
         await loginUser(formData);
-        navigate('/');
+        navigate(AppRoutes.HOME);
       } catch (err) {
         setError('Usuario y/o contraseña incorrectos');
       }
-    } else {
-      console.log('El formulario tiene errores:', errors);
     }
   };
 
@@ -64,7 +61,7 @@ const LoginPage: FC = () => {
           />
           <h1 className="login-page__title">Iniciar Sesión</h1>
           <form onSubmit={(e) => e.preventDefault()}>
-            <FormField id="name" label="Usuario" error={errors.username}>
+            <FormField id="username" label="Usuario" error={errors.username}>
               <Input
                 id="username"
                 className="w-full"

@@ -14,7 +14,7 @@ export const FormField: FC<PropsWithChildren<FormFieldProps>> = ({
   children,
 }) => {
   return (
-    <div id={id} className={styles['form-field']}>
+    <div className={styles['form-field']}>
       <label htmlFor={id} className={styles['form-field__label']}>
         {label}
       </label>

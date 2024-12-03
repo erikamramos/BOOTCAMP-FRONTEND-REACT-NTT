@@ -1,4 +1,4 @@
-import { AuthState, User, LoginPayload } from '../../models/auth';
+import { User, LoginPayload } from '../../models/auth';
 
 export const UserMock: User = {
   id: 1,

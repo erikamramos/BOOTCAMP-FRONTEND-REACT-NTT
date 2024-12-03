@@ -6,11 +6,15 @@ import useDistricts from '../../../hooks/useDistrict';
 import { validateEmail, validatePhone, validateText } from '../../../utils/validations';
 import { clearCart } from '../../../context/actions/cartActions';
 import { useCart } from '../../../hooks/useCart';
+import { FormShippingData } from '../../../models/Forms';
+import { useNavigate } from 'react-router-dom';
+import { AppRoutes } from '../../../router/AppRoutes';
 
 const FormShipping: FC = () => {
   const { dispatch } = useCart();
+  const navigate = useNavigate();
 
-  const [formValues, setFormValues] = useState({
+  const [formValues, setFormValues] = useState<FormShippingData>({
     name: '',
     lastname: '',
     email: '',
@@ -19,7 +23,7 @@ const FormShipping: FC = () => {
     reference: '',
     phone: '',
   });
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<FormShippingData>({
     name: '',
     lastname: '',
     email: '',
@@ -63,6 +67,7 @@ const FormShipping: FC = () => {
   const handleModalClose = () => {
     setIsModalOpen(false);
     clearCart(dispatch);
+    navigate(AppRoutes.HOME);
   };
 
   const mapDistrictOptions = () => {
