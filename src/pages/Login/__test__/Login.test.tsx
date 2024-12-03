@@ -19,7 +19,7 @@ describe('LoginPage Component', () => {
       loginUser: mockLoginUser,
     });
 
-    jest.spyOn(console, 'error').mockImplementation(() => {}); // Silenciar console.error temporalmente
+    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -42,7 +42,7 @@ describe('LoginPage Component', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Enviar' }));
 
     const errorMessages = screen.getAllByText('Este campo es obligatorio');
-    expect(errorMessages).toHaveLength(2); // Verifica que hay errores para ambos campos
+    expect(errorMessages).toHaveLength(2);
   });
 
   it('should call loginUser with correct data', async () => {
@@ -63,7 +63,7 @@ describe('LoginPage Component', () => {
   });
 
   it('should navigate to the home page after successful login', async () => {
-    mockLoginUser.mockResolvedValueOnce(undefined); // Simular login exitoso
+    mockLoginUser.mockResolvedValueOnce(undefined);
 
     renderComponent();
 
