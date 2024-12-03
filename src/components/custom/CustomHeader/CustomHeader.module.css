@@ -40,6 +40,7 @@
   color: var(--color-white);
   border: none;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .header__spacer {
@@ -56,4 +57,16 @@
   top: -5px;
   right: -5px;
   background-color: var(--color-highlight);
+}
+
+@media screen and (max-width: 768px) {
+  .header__logo img {
+    max-height: 25px;
+  }
+  .header__user {
+    font-size: 13px;
+  }
+  .header__logout {
+    font-size: 12px;
+  }
 }
