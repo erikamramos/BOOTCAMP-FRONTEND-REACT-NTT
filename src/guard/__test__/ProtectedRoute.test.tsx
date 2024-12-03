@@ -4,7 +4,7 @@ import ProtectedRoute from '@/guard/ProtectedRoute';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 jest.mock('@/config/envs', () => ({
-  envs: { BASE_URL: 'https://api.example.com' },
+  envs: { BASE_URL: 'https://dummyjson.com' },
 }));
 
 describe('ProtectedRoute Component', () => {

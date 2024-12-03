@@ -1,7 +1,7 @@
 import fetchInstance from '@/services/api/config/fetchInstance';
 
 jest.mock('@/config/envs', () => ({
-  envs: { BASE_URL: 'https://api.example.com' },
+  envs: { BASE_URL: 'https://dummyjson.com' },
 }));
 
 describe('fetchInstance', () => {
@@ -22,7 +22,7 @@ describe('fetchInstance', () => {
     ) as jest.Mock;
 
     const result = await fetchInstance<{ id: number; name: string }>('/test-endpoint');
-    expect(global.fetch).toHaveBeenCalledWith('https://api.example.com/test-endpoint', {
+    expect(global.fetch).toHaveBeenCalledWith('https://dummyjson.com/test-endpoint', {
       headers: {},
     });
     expect(result).toEqual({
@@ -46,7 +46,7 @@ describe('fetchInstance', () => {
     ) as jest.Mock;
 
     await fetchInstance('/test-endpoint');
-    expect(global.fetch).toHaveBeenCalledWith('https://api.example.com/test-endpoint', {
+    expect(global.fetch).toHaveBeenCalledWith('https://dummyjson.com/test-endpoint', {
       headers: {
         Authorization: 'Bearer test-token',
       },
@@ -68,7 +68,7 @@ describe('fetchInstance', () => {
       status: 404,
       statusText: 'Not Found',
     });
-    expect(global.fetch).toHaveBeenCalledWith('https://api.example.com/test-endpoint', {
+    expect(global.fetch).toHaveBeenCalledWith('https://dummyjson.com/test-endpoint', {
       headers: {},
     });
   });
@@ -77,7 +77,7 @@ describe('fetchInstance', () => {
     global.fetch = jest.fn(() => Promise.reject(new Error('Network Error'))) as jest.Mock;
 
     await expect(fetchInstance('/test-endpoint')).rejects.toThrow('Network Error');
-    expect(global.fetch).toHaveBeenCalledWith('https://api.example.com/test-endpoint', {
+    expect(global.fetch).toHaveBeenCalledWith('https://dummyjson.com/test-endpoint', {
       headers: {},
     });
   });
@@ -87,7 +87,7 @@ describe('fetchInstance', () => {
     global.fetch = jest.fn(() => Promise.reject(abortError)) as jest.Mock;
 
     await expect(fetchInstance('/test-endpoint')).rejects.toThrow('Request timeout');
-    expect(global.fetch).toHaveBeenCalledWith('https://api.example.com/test-endpoint', {
+    expect(global.fetch).toHaveBeenCalledWith('https://dummyjson.com/test-endpoint', {
       headers: {},
     });
   });

@@ -10,8 +10,9 @@
 
 ## My Market
 
-Este proyecto es una aplicación web reta
-il llamada "My Market". Permite a los usuarios ver productos, categorías y precios, y agregar productos a un carrito de compras.
+**My Market** es una aplicación web retail que permite a los usuarios explorar productos, categorías, precios y gestionar un carrito de compras con funcionalidades avanzadas y validaciones dinámicas.
+
+### Web
 
 ![Prototipo](/src/assets/images/screens/prototipo-1.png)
 ![Prototipo](/src/assets/images/screens/prototipo-2.png)
@@ -19,14 +20,51 @@ il llamada "My Market". Permite a los usuarios ver productos, categorías y prec
 ![Prototipo](/src/assets/images/screens/prototipo-3.png)
 ![Prototipo](/src/assets/images/screens/prototipo-4.png)
 
-<div style="display: flex; justify-content: space-around; align-items: center; gap: 10px;">
+### Mobile
+
+<div style="display: flex; justify-content: space-around; align-items: center; gap: 10px; flex-wrap:wrap">
     <img src="/src/assets/images/screens/prototipo-mobile-1.png" alt="Prototipo" style="width: 30%; height: auto;">
     <img src="/src/assets/images/screens/prototipo-mobile-2.png" alt="Prototipo" style="width: 30%; height: auto;">
     <img src="/src/assets/images/screens/prototipo-mobile-3.png" alt="Prototipo" style="width: 30%; height: auto;">
     <img src="/src/assets/images/screens/prototipo-mobile-4.png" alt="Prototipo" style="width: 30%; height: auto;">
+    <img src="/src/assets/images/screens/prototipo-mobile-5.png" alt="Prototipo" style="width: 30%; height: auto;">
 </div>
 
+## Funcionalidades Implementadas
+
+- [✔] Diseño y solución responsive para todas las vistas.
+- [✔] Visualizacion de los productos y categorias.
+- [✔] Busqueda de los productos por medio categorias.
+- [✔] Filtrar de los productos por busqueda.
+- [✔] Integración de los servicios [DummyJSON](https://dummyjson.com/docs/).
+- [✔] Manejo de rutas con `react-router-dom`.
+- [✔] Validaciones dinámicas en el formularios mostrando mensajes personalizados en caso de campos vacíos (Login, Formulario de envío, etc.).
+- [✔] Implementación de un HOC (Higher Order Component) para proteger rutas privadas y gestionar redirecciones.
+- [✔] Persistencia de sesión con `localStorage` para mantener al usuario autenticado al recargar la página.
+- [✔] Opción de "Cerrar sesión" que elimina los datos de sesión, limpia el estado global y redirecciona al login.
+- [✔] Paginación personalizada mediante un hook reutilizable.
+- [✔] Gestión de carrito con incrementos, decrementos y eliminación de productos.
+- [✔] Validación dinámica de formularios de compra, mostrando mensajes de error personalizados.
+- [✔] Implementación de pruebas unitarias con Jest y Testing Library para componentes, hooks y funcionalidades.
+- [✔] Cobertura de pruebas detallada para garantizar la calidad del código.
+- [✔] Modal para la funcionalidad de "Olvidé mi contraseña" con validación del formato de correo y confirmación de envío.
+
+## Metodología BEM
+
+Los estilos de la aplicación están organizados utilizando BEM (Block Element Modifier) para garantizar escalabilidad y mantenibilidad.
+
 ## Estructura del Proyecto
+
+El proyecto utiliza una arquitectura modular y escalable basada en Atomic Design. Las carpetas están organizadas de la siguiente manera:
+
+### Atomic Design en Componentes
+
+- **Atoms**: Componentes básicos e independientes (e.g., Button, Input).
+- **Molecules**: Combinación de átomos para crear elementos más complejos (e.g., Card, FormField).
+- **Organisms**: Componentes completos que forman secciones significativas (e.g., Navbar).
+- **Custom**: Componentes completos que forman secciones significativas (e.g., ProductList).
+
+### Estructura de Carpetas
 
 La arquitectura de carpetas en este branch está organizada de la siguiente manera:
 
@@ -177,6 +215,10 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 │   │   ├── Category.ts
 │   │   └── ...
 │   ├── pages
+│   │   ├── Login
+│   │   │   ├── __test__
+│   │   │   │   └── Login.test.tsx
+│   │   │   └── index.tsx
 │   │   ├── Cart
 │   │   │   ├── __test__
 │   │   │   │   └── Cart.test.tsx
@@ -231,6 +273,26 @@ La arquitectura de carpetas en este branch está organizada de la siguiente mane
 
 ```
 
+## Testing
+
+Se utilizaron Jest y Testing Library para cubrir las funcionalidades principales del proyecto:
+
+- Pruebas de componentes (renderizado, interacciones y props).
+- Validación de hooks personalizados.
+- Pruebas de rutas y redirecciones.
+- Mocking de servicios y validación de errores.
+- Cobertura de pruebas.
+
+#### Ejecutar pruebas con jest.
+
+```
+npm run test
+```
+
+```
+npm run test:coverage
+```
+
 ## Configuración del proyecto
 
 #### Instalación de dependencias
@@ -249,14 +311,4 @@ npm run dev
 
 ```
 Local:   http://localhost:5173/
-```
-
-#### Ejecutar pruebas con jest.
-
-```
-npm run test
-```
-
-```
-npm run test:coverage
 ```
