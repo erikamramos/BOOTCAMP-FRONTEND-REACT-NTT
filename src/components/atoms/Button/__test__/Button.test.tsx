@@ -5,6 +5,7 @@ const renderComponent = (props = { children: 'Click me' }) => {
   return render(<Button {...props}>{props.children}</Button>);
 };
 
+// basta con el snapshot no es necesario el tobeinthedocument
 describe('Button Component', () => {
   it('renders component', () => {
     const { container } = renderComponent();
