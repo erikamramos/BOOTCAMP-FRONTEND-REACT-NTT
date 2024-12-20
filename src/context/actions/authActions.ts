@@ -3,6 +3,7 @@ import { fetchAuth } from '../../services/api/authServices';
 
 export const login = async (dispatch: React.Dispatch<any>, payload: LoginPayload) => {
   const response = await fetchAuth(payload);
+  // tal vez crear un util para esto y evitar escribir manualmente las keys y en su lugar un enum
   localStorage.setItem('authToken', response.token);
   localStorage.setItem('authUser', JSON.stringify(response.user));
 
