@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination__button {
+  padding: 0.5rem 1rem;
+  font-family: var(--font-primary) !important;
+  border: none;
+  background-color: var(--color-button-bg);
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: #24555826 0px -50px 36px -28px inset;
+}
+
+.pagination__button:disabled {
+  background-color: #eaeaea;
+  cursor: not-allowed;
+}
+
+.pagination__button__active {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+}

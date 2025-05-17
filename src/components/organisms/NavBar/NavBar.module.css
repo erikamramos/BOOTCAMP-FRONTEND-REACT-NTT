@@ -1,0 +1,24 @@
+.navbar {
+  background-color: var(--color-secondary);
+  padding: var(--padding-medium);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.navbar__container {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-medium) var(--padding-large);
+  color: var(--color-secondary);
+  border-radius: var(--radius-xlarge);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__container {
+    padding: var(--padding-medium);
+    gap: 0.5rem;
+  }
+}

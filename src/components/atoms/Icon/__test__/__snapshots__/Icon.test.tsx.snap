@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon Component renders component 1`] = `
+<div>
+  <svg
+    aria-label="icon-search"
+    fill="#245558"
+    height="24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <use
+      href="/src/assets/icons/search.svg#icon"
+    />
+  </svg>
+</div>
+`;

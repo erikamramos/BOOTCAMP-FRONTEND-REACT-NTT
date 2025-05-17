@@ -1,0 +1,39 @@
+.card__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card__name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card__category {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: var(--radius-medium);
+  background-color: var(--color-accent);
+}
+
+.card__price {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.card__rating {
+  display: flex;
+  gap: 2px;
+}
+
+.card__button {
+  margin-top: auto;
+}

@@ -1,0 +1,19 @@
+.form-field {
+  margin-bottom: var(--margin-medium);
+}
+
+.form-field__label {
+  display: block;
+  margin-bottom: 0.2rem;
+  margin-left: 0.2rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.form-field__error {
+  color: var(--color-error);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+  display: block;
+}

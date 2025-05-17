@@ -1,0 +1,10 @@
+.select {
+  font-family: var(--font-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--padding-small);
+}
+
+.select:focus {
+  border: none;
+}

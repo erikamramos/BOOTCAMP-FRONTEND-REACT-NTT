@@ -1,0 +1,11 @@
+.footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--padding-large);
+  border-radius: var(--radius-xlarge) var(--radius-xlarge) 0 0;
+}
